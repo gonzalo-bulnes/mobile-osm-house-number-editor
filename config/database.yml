@@ -1,6 +1,6 @@
 # http://guides.rubyonrails.org/getting_started.html
 development:
-  adapter: postresql 
+  adapter: postgresql 
   database: durion_dev
   pool: 5
   username: gonzalo
