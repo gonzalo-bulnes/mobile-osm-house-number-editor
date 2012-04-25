@@ -1,2 +1,12 @@
-%h1 StaticPages#talks
-%p Find me in app/views/static_pages/talks.html.haml
+= provide(:title, 'Talks')
+%section
+  %h1 StaticPages#talks
+  %ul
+    %li.talk
+      .description
+        %p.abstract
+        %p.event
+        %p.date
+      .download
+        %a.pdf
+        %a.src
