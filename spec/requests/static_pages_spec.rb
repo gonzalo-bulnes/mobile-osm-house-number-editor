@@ -9,4 +9,12 @@ describe "Static pages" do
       page.should have_content('StaticPages#code')
     end
   end
+
+  describe "Talks page" do
+
+    it "should have the content 'StaticPages#talks'" do
+      visit '/static_pages/talks'
+      page.should have_content('StaticPages#talks')
+    end
+  end
 end
