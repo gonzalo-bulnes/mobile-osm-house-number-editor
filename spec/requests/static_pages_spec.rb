@@ -27,9 +27,14 @@ describe "Static pages" do
       page.should have_content('StaticPages#talks')
     end
 
-    it "should have 'Durion - Talks' as title" do
+    it "should have the base title 'Durion'" do
       visit '/talks'
-      page.should have_selector('title', :text => 'Durion - Talks')
+      page.should have_selector('title', :text => 'Durion')
+    end
+
+    it "should not have a custom title" do
+      visit '/talks'
+      page.should_not have_selector('title', :text => 'Talks')
     end
   end
 end
