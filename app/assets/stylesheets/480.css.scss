@@ -1,0 +1,26 @@
+/*
+ * 480.css Durion stylesheet
+ *
+ * Copyright (C) 2011 Gonzalo Bulnes Guilpain
+ * This file is in the public domain.
+ *
+ */
+
+/* These styles will override both default.css and 320.css
+   if the media is wider than 480px. */
+
+@media (min-width: 480px) {
+
+  /* Typography */
+
+  html > body {
+    font-size: 24px;
+  }
+
+  /* Website header */
+
+  #logo {
+    background-image: url("../images/infusion-96.png"); /* use clips! */
+  }
+
+} /* End of @media */

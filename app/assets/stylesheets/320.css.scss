@@ -1,0 +1,94 @@
+/*
+ * 320.css Duiron stylesheet
+ *
+ * Copyright (C) 2011 Gonzalo Bulnes Guilpain
+ * This file is in the public domain.
+ *
+ */
+
+/* These styles will override defaults if the media is wider than 320px. */
+
+@media (min-width: 320px) {
+
+  /* Website header */
+
+  #branding h1,
+  #branding h2 {
+    left: -9999px;
+    position: absolute;
+  }
+
+  #logo {
+    background-image: url("../images/infusion.png"); /* use clips! */
+    background-position: 50% 0.75em;
+    background-repeat: no-repeat;
+    height: 6em;
+    position: relative;
+  }
+
+  #logo a::after {
+    content: none;
+  }
+
+  #main-banner {
+    background-color: #3465a4; /* Tango Sky Blue 2 */
+    color: #eeeeec; /* Tango Aluninium 1 */
+  }
+
+  /* Main navigation */
+
+  /* Content */
+
+  /* Main footer */
+
+  #main-footer p.license {
+    background-image: url("../images/copy.png");
+    background-position: 1.5em 0.5em;
+    background-repeat: no-repeat;
+    min-height: 50px;
+  }
+
+  #main-footer p span {
+    display: block;
+    margin-left: 5.5em;
+  }
+
+  #html5-badge a {
+    background-image: url("../images/html5-badge.png"); /* use clips! */
+    background-position: left 50%;
+    background-repeat: no-repeat;
+    height: 32px;
+    position: relative;
+  }
+
+  #logo a::after {
+    content: none;
+  }
+
+
+  /* Colors */
+
+  a:link {
+    color: #3465a4; /* Tango Sky Blue 2 */
+  }
+
+  a:visited {
+    color: #75507b; /* Tango Plum 2 */
+  }
+
+  a:focus,
+  a:hover {
+    color: #204a87; /* Tango Sky Blue 3 */
+  }
+
+  a:visited:focus,
+  a:visited:hover {
+    color: #5c3566; /* Tango Plum 3 */
+  }
+
+  a.external {
+    background: #fff url("../images/linkred.gif") no-repeat right 60%;
+    padding-right: 16px;
+  }
+
+} /* End of @media */

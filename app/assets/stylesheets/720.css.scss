@@ -1,0 +1,293 @@
+/*
+ * 720.css Durion stylesheet
+ *
+ * Copyright (C) 2011 Gonzalo Bulnes Guilpain
+ * This file is in the public domain.
+ *
+ */
+
+/* These styles will override default.css, 320.css and 480.css
+ * if the media is wider than 720px.
+ */
+
+@media (min-width: 720px) {
+
+  #page-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    min-width: 720px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  #page-wrapper::before {
+    content: "";
+    background-color: #fff;
+    height: 100%;
+    left: 10px;
+    position: absolute;
+    width: 97.9166%;
+    z-index: -1;
+  }
+
+  /* Typography */
+
+  html > body {
+    font-size: 16px;
+  }
+
+  /* Fluid 12-Columns Grid System
+   * The basic positioning is done here, however the entire sytlesheet has been
+   * written taking into account the fluid grid. E.g. when relevant, do not
+   * forget writing margin: 1.0416%; instead of margin: 10px; even outside of
+   * this section. */
+
+  #page-wrapper {
+    position: relative;
+    width: 100%; /* 960px / 960px */
+  }
+
+    #branding {
+      float: left;
+      margin: 0 1.0416%; /* 10px / 960px */
+      width: 31.2500%; /* 300px / 960px */
+    }
+
+    #main-nav {
+      float: left;
+      margin: 0 1.0416%; /* 10px / 960px */
+      width: 64.5833%; /* 620px / 960px */
+    }
+
+  #secondary-banner {
+    background-color: #fff;
+    clear: left;
+    /*height: 22.5em;*/
+    width: 100%;
+  }
+
+  #main-banner {
+    width: 100%;
+  }
+
+  #main-footer {
+    
+  }
+
+    #main-footer section {
+      float: left;
+      margin: 0 1.0416%; /* 10px / 960px */
+      width: 31.2500%; /* 300px / 960px */
+    }
+
+  /* Website header */
+
+  #logo {
+    background-image: url("../images/infusion.png"); /* use sprites and clips! */
+    border-width: 0;
+  }
+
+  #main-nav {
+    border-width: 0;
+    padding-bottom: 0.75em;
+    padding-top: 1.2em;
+  }
+
+    #main-nav ul {
+      float: left;
+      /*border: 1px solid #555753;
+      border-width: 1px 0;
+      width: 87.096%; /* 540px / 620px */
+      /*margin: -1px 6.451%; /* 40px / 620px and border compensation */
+    }
+
+      #main-nav li {
+        float: left;
+      }
+
+        #main-nav a {
+          border-radius: 0.5em;
+          display: block;
+          padding: 0.5em 0.5em 0.75em;
+          margin: 0.3em 10px 0.2em;
+        }
+
+        #main-nav a:focus,
+        #main-nav a:hover {
+          background: #DDF;
+        }
+
+        #main-nav .current a:focus,
+        #main-nav .current a:hover {
+          background-color: inherit;
+        }
+
+  #secondary-banner {
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  #secondary-banner::before {
+    border-color: transparent #aaa transparent transparent;
+    border-style: solid;
+    border-width: 10px 10px;
+    bottom: -10px;
+    left: -10px;
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    z-index: -1;
+  }
+
+  #secondary-banner::after {
+    border-color: transparent transparent transparent #aaa;
+    border-style: solid;
+    border-width: 10px 10px;
+    bottom: -10px;
+    right: -10px;
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    z-index: -1;
+  }
+
+  #secondary-banner .content {
+    background-color: #fff;
+    border: 6px solid #3465a6;
+    height: 21.5em;
+  }
+
+  /* Frontpage Content */
+
+  /*#main-banner {
+    border-bottom-width: 0; /* Override 320.css /
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    float: right;
+    padding-bottom: 0; /* Override 320.css /
+    padding-top: 0; /* Override 320.css /
+    width: 390px;
+    z-index: 1;
+  }
+
+  #main-banner::before {
+    border-color: transparent transparent transparent #aaa;
+    border-style: solid;
+    border-width: 10px 10px;
+    bottom: -10px;
+    right: -10px;
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    z-index: -2;
+  }
+
+  #main-banner .content {
+    background-color: #3465A4;
+    color: #eeeeec;
+    padding-bottom: 1.9em; /* Replace 320.css /
+    padding-top: 2em; /* Replace 320.css /
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }*/
+
+  #main-banner {
+    background-color: #fff;
+    border-bottom-width: 0; /* Override 320.css */
+    color: #2e3436;
+    float: right;
+    padding-bottom: 1.9em; /* Replace 320.css */
+    padding-top: 2em; /* Replace 320.css */
+    position: relative;
+    width: 32.2916%; /* 310px / 960px */
+    margin-right: 9.375%; /* 90px / 960px */
+    margin-top: 1em; /* FIXME adjust to typo canvas */
+    z-index: 1;
+  }
+
+  #main-banner::before {
+    border-color: #888a85; /* Tango Aluminium 4 */
+    border-style: solid;
+    border-width: 1.2857em 1.2857em 0 0; /* 18px */
+    top: 0;
+    right: 0;
+    content: "";
+    position: absolute;
+    height: 41.8848%; /* 80px / 191px (observed height) */
+    width: 25.8064%; /* 80px / 310px */
+    z-index: -1;
+  }
+
+  #main-banner p {
+    margin-top: 1.1428em; /* */
+    margin-left: 6.4516%;
+    margin-right: 14.1935%;
+  }
+
+  .summary {width: 30%; /* FIXME temporary */ }
+
+  /* Front Page Specific First Column */
+
+  .summary {
+    position: absolute;
+    left: -9999px;
+  }
+
+  article {
+    background-color: transparent; /* Override default.css */
+  }
+
+  /* FIXME #main-characteristics {
+    clear: right;
+    float: right;
+    margin-right: 9.375%; /* 90px / 960px /
+    width: 32.2916%; /* 310px / 960px /
+  }
+
+  #main-characteristics h2,
+  #main-features h2,
+  #main-characteristics p,
+  #main-features p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .summary {
+    position: absolute;
+    left: -9999px;
+  }
+
+  #main-features {
+    margin-left: 26.041%; /* 250px / 960px /
+    width: 32.2916%; /* 310px / 960px /
+
+  }
+
+  section {
+    font-size: 87.5%;
+    line-height: 1.5em;
+  }*/
+
+  /* Footer */
+
+  #j {
+    background-color: transparent;
+  }
+
+  #main-footer {
+    background-color: #2e3436; /* Tango Aluminium 6 */
+  }
+
+  /* Miscelaneous */
+
+  /* adjust font-size for main-nav when being fluid to fit into 720px */
+
+
+} /* End of @media */

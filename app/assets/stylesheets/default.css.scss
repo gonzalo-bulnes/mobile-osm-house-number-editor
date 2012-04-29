@@ -1,0 +1,229 @@
+/*
+ * Default Durion stylesheet
+ *
+ * Copyright (C) 2011 Gonzalo Bulnes Guilpain
+ * This file is in the public domain.
+ *
+ */
+
+body {
+  background-color: #d9d9d9;
+  background-repeat: repeat;
+  background-position: left 22px; /*14px*/
+  color: #000;
+}
+
+#page-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20em;
+}
+
+/* Typography
+ * Provide basic font sizes and vertical spacings
+ */
+
+html > body {
+  font-size: 16px;
+}
+
+body {
+  /* Uncomment the following instruction to show the typography canvas */
+  /*background-image: url("../images/canvas-24.png");*/
+}
+
+body, div, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1 {
+  font-size: 225%;
+  line-height: 2em;
+  padding-top: 20px;
+  padding-bottom: 7px;
+}
+
+#branding hgroup h1 {
+  line-height: 1.33333em;
+}
+
+h2,
+section h1 {
+  font-size: 150%;
+  margin-bottom: 0px;
+  line-height: 1em;
+  padding-top: 33px;
+  padding-bottom: 15px;
+}
+
+#branding hgroup h2 {
+  font-size: 100%;
+  margin-bottom: 0px;
+  line-height: 1.5em;
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+p {
+  /* Inherited font-size: 100% */
+  line-height: 1.5em;
+  padding-top: 0px;
+}
+
+/* Website header */
+
+#branding {
+  background-color: #fff;
+}
+
+#branding h1,
+#branding h2,
+#branding #logo {
+  background-color: #fff;
+  color: #000;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#logo {
+  border-bottom: 1px solid #555753; /* Tango Aluminium 5 */
+}
+
+#logo a {
+  display: block; /* mobile */
+  height: 100%;
+  padding-bottom: 0.75em;
+  padding-top: 0.75em;
+  width: 100%;
+}
+
+#logo a::after {
+  content: attr(title);
+}
+
+#logo a.current::after {
+  content: none;
+}
+
+#main-banner {
+  background-color: #fff;
+  border-bottom: 1px solid #555753; /* Tango Aluminium 5 */
+  color: black;
+  padding-bottom: 1.9em; /* 2.1em */
+  padding-top: 2em; /* 1.8em */
+}
+
+#main-banner p {
+  font-size: 87.5%;
+  line-height: 1.5em;
+  margin-left: 2.857em;
+  margin-right: 2em;
+}
+
+/* Main navigation */
+
+nav,
+header.summary {
+  background-color: #fff;
+  border-bottom: 1px solid #555753; /* Tango Aluminium 5 */
+  color: inherit;
+  padding-bottom: 1.9em; /* (1.99 with 4 links) rounded line-height adjustement */
+  padding-top: 1.5em;
+}
+
+nav ul,
+header.summary ol {
+  list-style: none;
+  margin: 0 1em 0 2.5em;
+  position: relative;
+}
+
+header.summary ol {
+  list-style: decimal;
+}
+
+nav a,
+header.summary a {
+  background-color: #fff;
+  display: block;
+  font-size: 125%;
+  line-height: 1.5em;
+  text-decoration: underline; /* Should not rely on :hover */
+}
+
+header.summary a {
+  font-size: 100%;
+}
+
+nav .current a {
+  cursor: default;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Content */
+
+article {
+  background-color: #fff;
+  border-bottom: 1px solid #555753; /* Tango Aluminium 5 */
+  padding-bottom: 2.9em;
+}
+
+article h1 {
+  left: -9999px;
+  position: absolute;
+  margin-left: 1.125em;
+}
+
+article section h1 {
+  margin-left: 1.75em;
+  margin-right: 2.5em;
+}
+
+article h2 {
+  font-size: 125%;
+  line-height: 1.2em;
+  margin-left: 2em;
+  margin-right: 2.5em;
+  padding-top: 1.9em;
+  padding-bottom: 0.5em;
+}
+
+article p {
+  margin-left: 2.5em;
+  margin-right: 1.75em;
+}
+
+/* Footer */
+
+#main-footer {
+  background-color: #fff;
+  font-size: 0.75em;
+  overflow: hidden;
+  padding-bottom: 4em;
+  padding-top: 2em;
+  line-height: 2em;
+}
+
+#main-footer p {
+  margin-left: 3.333em;
+  margin-right: 2em;
+}
+
+#html5-badge a {
+  display: block;
+  margin: 2.8em 1.5em 1.5em 4.8em;
+}
+
+#html5-badge img {
+  height: 32px;
+  width: 83px;
+}
+
+/* Specific Blocks */
+
+/** {background-color: transparent !important}*/
