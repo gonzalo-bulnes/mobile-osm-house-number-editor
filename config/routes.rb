@@ -1,8 +1,11 @@
 Durion::Application.routes.draw do
+  get "pages/article"
+
   root :to => "StaticPages#talks"
   match "/code" => "StaticPages#code"
   match "/talks" => "StaticPages#talks"
 
+  match "/article" => "Pages#article"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
