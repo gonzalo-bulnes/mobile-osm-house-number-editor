@@ -13,6 +13,12 @@ describe "Static pages" do
       visit '/code'
       page.should have_selector('title', :text => 'Durion - Code')
     end
+
+    it "should have basic CSS selectors" do
+      visit '/code'
+      page.should have_selector('body#code')
+      page.should have_selector('div#page-wrapper')
+    end
   end
 
   describe "Talks page" do
@@ -36,5 +42,11 @@ describe "Static pages" do
       visit '/talks'
       page.should_not have_selector('title', :text => 'Talks')
     end
+
+    it "should have 'talks' as page ID" do
+      visit '/talks'
+      page.should have_selector('body#talks')
+    end
+
   end
 end

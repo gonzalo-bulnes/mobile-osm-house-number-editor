@@ -1,4 +1,5 @@
 = provide(:title, 'Code')
+= provide(:page_id, 'code')
 %section
   %h1 StaticPages#code
   %ul
@@ -14,5 +15,5 @@
           Github repository:
           %a(href="https://github.com/gonzalo-bulnes/santiago-beamer-theme")gonzalo-bulnes/santiago-beamer-theme
       .download
-        %img(src="https://github.com/gonzalo-bulnes/santiago-beamer-theme/blob/master/images/mockup-front.png")
-        %img(src="https://github.com/gonzalo-bulnes/santiago-beamer-theme/blob/master/images/mockup-inside.png")
+        = image_tag("2347623/mockup-front.png", alt: "Mockup of the Santiago title page", height: "60px", width: "80px")
+        = image_tag("2347623/mockup-inside.png", alt: "Mockup of a Santiago inside page")
