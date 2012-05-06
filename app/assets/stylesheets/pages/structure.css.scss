@@ -10,10 +10,21 @@
  * It should content only structure higlighters.
  */
 
-header,
-nav,
-article,
-aside,
+header {
+  background-color: #f88;
+}
+nav {
+  background-color: #8f8;
+}
+article {
+  background-color: #88f;
+  aside {
+    background-color: #99e;
+  }
+}
+aside {
+  background-color: #f8f;
+}
 footer {
-  border: 2px solid gray;
+  background-color: #ff8;
 }

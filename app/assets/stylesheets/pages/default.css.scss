@@ -5,3 +5,12 @@
  * This file is in the public domain.
  *
  */
+
+  #page-wrapper {
+    width: 240px;
+  }
+
+  #page-wrapper>header {
+    position: absolute;
+    left: -9999px;
+  }

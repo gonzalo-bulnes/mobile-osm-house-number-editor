@@ -12,4 +12,29 @@
 
 @media (min-width: 960px) {
 
+  #page-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+  }
+
+  #page-wrapper>nav {
+    float: right;
+    margin: 0 1.0416%; /* 10px / 960px */
+    width: 64.5833%; /* 620px / 960px */ 
+  }
+
+  #page-wrapper>article {
+    clear: right;
+  }
+
+  aside.tags {
+    float: right;
+    margin: 0 1.0416%; /* 10px / 960px */
+    width: 81.2500%; /* 780px / 960px */
+  }
+
+  article>section {
+    clear: right;
+  }
 } /* End of @media */
