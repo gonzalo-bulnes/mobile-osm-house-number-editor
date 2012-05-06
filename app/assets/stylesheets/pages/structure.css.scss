@@ -1,0 +1,19 @@
+/*
+ * Structure Durion stylesheet
+ *
+ * Copyright (C) 2011 Gonzalo Bulnes Guilpain
+ * This file is in the public domain.
+ *
+ */
+
+/* This file will be disabled for production.
+ * It should content only structure higlighters.
+ */
+
+header,
+nav,
+article,
+aside,
+footer {
+  border: 2px solid gray;
+}

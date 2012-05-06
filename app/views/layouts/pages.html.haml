@@ -1,1 +1,19 @@
-= yield
+!!! 5
+%html.no-js
+  %head
+    %meta{charset: "utf-8"}
+    %title #{full_title(yield(:title))}
+    =stylesheet_link_tag "pages", media: "all"
+    =javascript_include_tag "application"
+    =csrf_meta_tags
+  %body
+    #page-wrapper
+      %header
+        %hgroup
+          %h1 Durion
+          %h2 A sample application
+      %nav
+        nav
+      = yield
+      %footer
+        footer
