@@ -1,8 +1,7 @@
 = provide(:title, "Article")
 = provide(:page_id, 'example')
 %article
-  %aside.tags
-    aside.tags
+  = render 'pages/tags'
   %section
     %h1 Article Example
     %p Find me in app/views/pages/article.html.haml

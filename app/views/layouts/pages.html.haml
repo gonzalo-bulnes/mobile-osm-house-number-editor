@@ -8,12 +8,7 @@
     =csrf_meta_tags
   %body
     #page-wrapper
-      %header
-        %hgroup
-          %h1 Durion
-          %h2 A sample application
-      %nav
-        nav
+      = render 'layouts/header'
+      = render 'layouts/nav'
       = yield
-      %footer
-        footer
+      = render 'layouts/footer'
