@@ -6,6 +6,7 @@ Durion::Application.routes.draw do
   match "/talks" => "StaticPages#talks"
 
   match "/article" => "Pages#article"
+  match "/writing" => "Pages#article" # fake path
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

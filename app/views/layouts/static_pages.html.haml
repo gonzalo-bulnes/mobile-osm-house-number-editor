@@ -13,14 +13,15 @@
           %h1 Title
           %h2 Subtitle
           #logo<
-            %a#jump-to-home(href="#" title="Jump to the Hello! page")
+            = link_to "", root_url, {title: "Jump to the Hello! page"}
+            -#%a#jump-to-home(href="#" title="Jump to the Hello! page")
 
       %nav#main-nav
         %ul
           %li
-            = link_to "Talks", "#"
+            = link_to "Talks", talks_path
           %li
-            = link_to "Code", "#"
+            = link_to "Code", code_path
 
       %aside#secondary-banner<
         .content
