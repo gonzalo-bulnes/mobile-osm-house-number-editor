@@ -2,24 +2,21 @@ require 'spec_helper'
 
 describe "Static pages" do
 
-  describe "Code page" do
-    before { visit code_path }
+  subject { page }
 
-    it { page.should have_content('StaticPages#code') }
-    it { page.should have_selector('title', :text => 'Durion - Code') }
-    it "should have basic CSS selectors" do
-      page.should have_selector('body#code')
-      page.should have_selector('div#page-wrapper')
-    end
+  describe "About page" do
+    before { visit about_path }
+
+    pending { should have_selector('title',
+                                    text: 'Mobile OSM House Number Editor - About') }
+    it { should have_selector('h1', text: 'Mobile OSM House Number Editor') }
   end
 
-  describe "Talks page" do
-    before { visit talks_path }
-
-    it { page.should have_selector('h1', :text => 'StaticPages#talks') }
-    it { page.should have_content('StaticPages#talks') }
-    it { page.should have_selector('title', :text => 'Durion') }
-    it { page.should_not have_selector('title', :text => 'Talks') }
-    it { page.should have_selector('body#talks') }
+  describe "Home page" do
+    before { visit root_path }
+    it "should be a page which exists" do
+      get "/"
+      response.code.should eq("200")
+    end
   end
 end

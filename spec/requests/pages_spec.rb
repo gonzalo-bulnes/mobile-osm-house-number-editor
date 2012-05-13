@@ -5,11 +5,11 @@ describe "Pages" do
     before { visit article_path }
 
     it { page.should have_selector('h1', :text => 'Article Example') }
-    it "should have basic structure" do
+    pending "should have basic structure" do
       page.should have_selector('nav')
       page.should have_selector('article')
       page.should have_selector('footer')
     end
-    it { page.should have_selector('aside.tags') }
+    pending { page.should have_selector('aside.tags') }
   end
 end

@@ -1,12 +1,10 @@
 Mobileosmhousenumbereditor::Application.routes.draw do
   get "pages/article"
 
-  root :to => "StaticPages#talks"
-  match "/code" => "StaticPages#code"
-  match "/talks" => "StaticPages#talks"
+  root :to => "StaticPages#about"
+  match "/about" => "StaticPages#about"
 
   match "/article" => "Pages#article"
-  match "/writing" => "Pages#article" # fake path
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

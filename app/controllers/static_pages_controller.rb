@@ -1,6 +1,4 @@
 class StaticPagesController < ApplicationController
-  def code
-  end
-  def talks
+  def about
   end
 end
