@@ -9,7 +9,7 @@ describe "Static pages" do
 
     pending { should have_selector('title',
                                     text: 'Mobile OSM House Number Editor - About') }
-    it { should have_selector('h1', text: 'Mobile OSM House Number Editor') }
+    it { should have_selector('p', text: 'Find me in /app/views/static_pages/about.html.haml') }
   end
 
   describe "Home page" do

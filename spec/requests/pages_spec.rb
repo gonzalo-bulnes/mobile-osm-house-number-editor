@@ -4,7 +4,7 @@ describe "Pages" do
   describe "Article page" do
     before { visit article_path }
 
-    it { page.should have_selector('h1', :text => 'Article Example') }
+    it { page.should have_selector('p', :text => 'Find me in /app/views/pages/article.html.haml') }
     pending "should have basic structure" do
       page.should have_selector('nav')
       page.should have_selector('article')
