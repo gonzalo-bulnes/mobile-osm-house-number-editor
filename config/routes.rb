@@ -1,4 +1,4 @@
-Durion::Application.routes.draw do
+Mobileosmhousenumbereditor::Application.routes.draw do
   get "pages/article"
 
   root :to => "StaticPages#talks"
