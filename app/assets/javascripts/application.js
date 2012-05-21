@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require h5bp
+//= require leaflet/leaflet
+//= require map
 

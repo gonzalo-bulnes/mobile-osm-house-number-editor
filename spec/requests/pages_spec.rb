@@ -37,5 +37,8 @@ describe "Pages" do
       should have_selector('footer p.copyright', :text => 'Copyright')
       should have_selector('footer p a', :text => 'Github repository')
     end
+    it "should have a map" do
+      should have_selector('#map')
+    end
   end 
 end
