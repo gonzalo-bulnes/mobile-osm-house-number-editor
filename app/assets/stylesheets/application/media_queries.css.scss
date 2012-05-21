@@ -104,6 +104,30 @@ a {
         height: 100%;
         min-height: inherit;
         position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          border-color: transparent transparent transparent rgba(27,27,27,.8);
+          border-style: solid;
+          border-width: 20px;
+          left: 50%;
+          margin-left: -20px;
+          margin-top: -20px;
+          top: 50%;
+          z-index: 3;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          border-color: transparent transparent transparent $darkgray;
+          border-style: solid;
+          border-width: 20px 40px;
+          left: 50%;
+          margin-left: -40px;
+          margin-top: -20px;
+          top: 50%;
+          z-index: 2;
+        }
       }
     }
   }
