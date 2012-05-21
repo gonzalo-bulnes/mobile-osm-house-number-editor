@@ -13,6 +13,7 @@ $gray-complement: #fff;
 $lightgray: #aaa;
 $mdn-yellow: #f8d575;
 $mdn-blue: #0cf;
+$mdn-red: #f33;
 
 @mixin header-fit {
   background-color: $gray;
@@ -26,6 +27,7 @@ $mdn-blue: #0cf;
 a {
   &:hover, &:focus {
     color: $mdn-blue;
+    text-decoration: underline;
   }
 }
 
@@ -87,8 +89,35 @@ a {
 
   /* Temporary Styles */
   div#main {
-    background-color: white;
+    /*background-color: white;*/
     clear: both;
+  }
+
+  aside {
+    @include center;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    width: $width;
+    a {
+      color: $mdn-blue;
+    }
+    section {
+      float: left;
+      width: 31.250%; /* 300px / 960px (4 columns) */
+      margin: 0 1.042%; /* 10px / 960px (2 gutters) */
+      h1, h2 {
+        font-size: 1.714em; /* 24px / 14px */
+        margin: 1em 0;
+        a {
+          color: $gray-complement;
+          text-decoration: none;
+        }
+      }
+      &#alpha h1 {
+        color: $mdn-red;
+      }
+    }
   }
 
   footer {
