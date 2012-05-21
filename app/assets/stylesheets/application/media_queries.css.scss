@@ -89,8 +89,13 @@ a {
 
   /* Temporary Styles */
   div#main {
-    /*background-color: white;*/
     clear: both;
+    #banner {
+      @include center;
+      background-color: white;
+      min-height: 80px; /* arbitrary */
+      width: 100%; /* full screen width */
+    }
   }
 
   aside {
