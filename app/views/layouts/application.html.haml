@@ -5,7 +5,9 @@
 
   %body{ :class => "#{ controller.controller_name }" }
     = render "chromeframe"
-    = render "header"
+    #header-wrapper
+      = render "header"
+      = render "nav"
 
     #main{ :role => "main" }
       = render "flashes"

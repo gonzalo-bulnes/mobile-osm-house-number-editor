@@ -5,6 +5,7 @@ Mobileosmhousenumbereditor::Application.routes.draw do
   match "/about" => "StaticPages#about"
 
   match "/article" => "Pages#article"
+  match "/home" => "Pages#home"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
