@@ -6,6 +6,85 @@
 // This example overrides the primary ('mobile first') styles
 // Modify as content requires.
 
-@media only screen and (min-width: 35em) {
-  // Style adjustments for viewports that meet the condition
+$gray: #333;
+$gray-complement: #fff;
+$mdn-yellow: #f8d575;
+$mdn-blue: #0cf;
+
+@mixin header-fit {
+  background-color: $gray;
+  color: $gray-complement;
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+a {
+  &:hover, &:focus {
+    color: $mdn-blue;
+  }
+}
+
+@media (min-width: 320px) {}
+
+@media (min-width: 480px) {}
+
+@media (min-width: 720px) {}
+
+@media (min-width: 960px) {
+
+  $width: 960px;
+
+  body {
+    background-color: $gray;
+    color: $gray-complement;
+  }
+
+  #header-wrapper {
+    @include center;
+    width: $width;
+  }
+
+  header {
+    background: transparent image_url('shared/isotype-32.png') no-repeat 10px center;
+    float: left;
+    position: relative;
+    h1 {
+      @include header-fit;
+      float: left;
+      margin-left: 48px; /* 10px + (image) 32px + 6px */
+      margin-right: 10px; /* arbitrary */
+      &::before {
+        color: $mdn-yellow;
+        content: "Mobile! ";
+      }
+    }
+  }
+  
+  nav {
+    float: right;
+    ul {
+      @include reset;
+      float: right;
+      list-style: none;
+      width: 100%;
+      li {
+        float: left;
+        a {
+          @include header-fit;
+          display: block;
+          margin-left: .5em;
+          margin-right: .5em;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  /* Temporary Styles */
+  div#main {
+    background-color: white;
+    clear: both;
+  }
 }
