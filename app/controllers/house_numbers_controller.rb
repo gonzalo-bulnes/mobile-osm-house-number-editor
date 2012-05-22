@@ -7,7 +7,7 @@ class HouseNumbersController < ApplicationController
     @housenumber = HouseNumber.new(params[:house_number])
     if @housenumber.save
       flash[:success] = "Welcome!"
-      redirect_to @housenumber # Shortcut to user_path
+      redirect_to @housenumber # Shortcut to house_number_path
     else
       render 'new'
     end
@@ -15,6 +15,7 @@ class HouseNumbersController < ApplicationController
 
   def new
     @housenumber = HouseNumber.new
+    render 'pages/home'
   end
 
   def show

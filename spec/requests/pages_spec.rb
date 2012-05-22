@@ -40,5 +40,8 @@ describe "Pages" do
     it "should have a map" do
       should have_selector('#map')
     end
+    it "should have a form to create HouseNumbers" do
+      should have_selector('form')
+    end
   end 
 end
