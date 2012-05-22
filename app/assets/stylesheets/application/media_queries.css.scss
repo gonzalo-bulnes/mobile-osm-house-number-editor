@@ -143,14 +143,12 @@ a {
                -o-border-radius: 20px;
                   border-radius: 20px;
           float: right;
-          height: 200px; /* set temporary while the element is empty */
           margin-right: 40px;
           margin-top: 2em; /* arbitrary */
           max-width: 440px; /* ( 50% of 960px ) - 40xp (margin right) */
           position: absolute;
           right: -20px;
           top: 0;
-          width: 300px; /* set temporary while the element is empty */
           form {
             background-color: $darkgray;
             color: $gray-complement;
@@ -160,8 +158,65 @@ a {
                  -o-border-radius: 15px;
                     border-radius: 15px;
             margin: 20px; /* transparent border width, see #map::after and ::before */
-            min-height: 230px;
+            //min-height: 230px;
+            overflow: hidden;
             padding-top: 3px;
+            .field {
+              margin: 5px auto;
+              overflow: hidden;
+              width: auto;
+              label {
+                display: block;
+                font-size: .86em;
+                margin: 2px 10px;
+              }
+              input {
+                margin: auto 10px;
+                text-align: center;
+                width: 12em;
+              }
+              &#housenumber input {
+                display: block;
+                font-size: 32px;
+                font-weight: normal;
+                text-align: center;
+                width: 8em;
+              }
+              &#lat, &#lon {
+                margin: 5px auto;
+                overflow: hidden;
+              }
+              &#lat label, &#lon label {
+                float: left;
+              }
+              &#lat input, &#lon input {
+                display: block;
+                float: right;
+              }
+              &#preview, &#submit {
+                float: right;
+              }
+              &#preview button {
+                background-color: inherit;
+                border-width: 0;
+                color: inherit;
+                cursor: pointer;
+                float: right;
+                margin: 10px 10px 20px;
+                padding: 3px 4px 8px;
+                text-decoration: underline;
+                &:focus, &:hover {
+                  background-color: inherit;
+                  color: $mdn-yellow;
+                }
+              }
+              &#submit input {
+                float: right;
+                margin: 7px 10px 20px;
+                padding: 4px 10px;
+                width: auto;
+              }
+            }
           }
         }
       }

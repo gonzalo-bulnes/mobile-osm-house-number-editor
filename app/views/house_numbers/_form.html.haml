@@ -2,8 +2,11 @@
   = f.text_field :changeset, type: "hidden"
 
   .field#housenumber
-    = f.label :value
+    = f.label :value, "House number"
     = f.text_field :value, placeholder: "e.g. 5435bis"
+
+  .field
+    %label Use geolocation please
 
   .field#lat
     = f.label :latitude
