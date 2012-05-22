@@ -7,8 +7,6 @@ describe "Static pages" do
   describe "About page" do
     before { visit about_path }
 
-    pending { should have_selector('title',
-                                    text: 'Mobile OSM House Number Editor - About') }
     it { should have_selector('p', text: 'Find me in /app/views/static_pages/about.html.haml') }
   end
 

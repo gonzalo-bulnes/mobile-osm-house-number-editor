@@ -1,0 +1,20 @@
+= form_for(@housenumber) do |f|
+  = f.text_field :changeset, type: "hidden"
+
+  .field#housenumber
+    = f.label :value
+    = f.text_field :value, placeholder: "e.g. 5435bis"
+
+  .field#lat
+    = f.label :latitude
+    = f.text_field :latitude, placeholder: "-33.127803"
+
+  .field#lon
+    = f.label :longitude
+    = f.text_field :longitude, placeholder: "-70.531570"
+
+  .field#submit
+    = f.submit
+
+  .field#preview
+    %button Preview
