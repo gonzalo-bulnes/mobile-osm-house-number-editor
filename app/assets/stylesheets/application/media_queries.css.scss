@@ -126,7 +126,43 @@ a {
           margin-left: -40px;
           margin-top: -20px;
           top: 50%;
-          z-index: 2;
+          z-index: 3;
+        }
+      }
+      #form-wrapper {
+        height: 100%; 
+        position: absolute;
+        top: 0;
+        width: 50%;
+        z-index: 2;
+        #form-wrapper-inner {
+          background-color: rgba(27,27,27,.8);
+          -webkit-border-radius: 20px;
+             -moz-border-radius: 20px;
+              -ms-border-radius: 20px;
+               -o-border-radius: 20px;
+                  border-radius: 20px;
+          float: right;
+          height: 200px; /* set temporary while the element is empty */
+          margin-right: 40px;
+          margin-top: 2em; /* arbitrary */
+          max-width: 440px; /* ( 50% of 960px ) - 40xp (margin right) */
+          position: absolute;
+          right: -20px;
+          top: 0;
+          width: 300px; /* set temporary while the element is empty */
+          form {
+            background-color: $darkgray;
+            color: $gray-complement;
+            -webkit-border-radius: 15px;
+               -moz-border-radius: 15px;
+                -ms-border-radius: 15px;
+                 -o-border-radius: 15px;
+                    border-radius: 15px;
+            margin: 20px; /* transparent border width, see #map::after and ::before */
+            min-height: 230px;
+            padding-top: 3px;
+          }
         }
       }
     }
