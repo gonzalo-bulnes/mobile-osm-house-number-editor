@@ -6,15 +6,15 @@
     = f.text_field :value, placeholder: "e.g. 5435bis"
 
   .field
-    %label Use geolocation please
+    %label Fill the location in or slip the map
 
   .field#lat
     = f.label :latitude
-    = f.text_field :latitude, placeholder: "-33.127803"
+    = f.text_field :latitude, placeholder: "e.g. -33.127803"
 
   .field#lon
     = f.label :longitude
-    = f.text_field :longitude, placeholder: "-70.531570"
+    = f.text_field :longitude, placeholder: "e.g. -70.531570"
 
   .field#submit
     = f.submit "Submit!"

@@ -37,4 +37,7 @@ html, body {
   @include center;
 }
 
-
+abbr {
+  border-width: 0;
+  cursor: help;
+}
