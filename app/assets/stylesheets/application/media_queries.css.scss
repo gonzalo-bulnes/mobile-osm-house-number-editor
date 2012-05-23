@@ -291,23 +291,27 @@ a {
   }
 
   footer {
-    @include center;
-    background-color: inherit;  
-    border-top: 1px solid $almost-gray;
-    clear: both;
-    color: $lightgray;
-    font-size: .86em;
-    line-height: 1.5em;
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-    overflow: hidden;
-    position: relative;
-    width: $width;
-    p, small {
-      float: left;
-      margin: 1em .5em;
-      a {
-        color: $mdn-blue;
+    bottom: 0;
+    position:absolute;
+    width: 100%;
+    div {
+      @include center;
+      background-color: inherit;
+      border-top: 1px solid $almost-gray;
+      color: $lightgray;
+      font-size: .86em;
+      line-height: 1.5em;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      overflow: hidden;
+      /* footer div position should be set and is absolute by default */
+      width: $width;
+      p, small {
+        float: left;
+        margin: 1em .5em;
+        a {
+          color: $mdn-blue;
+        }
       }
     }
   }
