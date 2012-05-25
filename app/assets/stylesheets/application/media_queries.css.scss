@@ -9,7 +9,7 @@
 $almost-gray: #383838;
 $darkgray: #222;
 $gray: #333;
-$gray-complement: #fff;
+$gray-complement: #f0f0f0;
 $lightgray: #aaa;
 $mdn-yellow: #f8d575;
 $mdn-blue: #0cf;
@@ -114,7 +114,7 @@ a {
           margin-right: .5em;
           position: relative;
           text-decoration: none;
-          #about_page &#about_link {
+          #help_page &#help_link {
             &::after {
               @include index;
             }
@@ -135,6 +135,14 @@ a {
       background-color: white;
       min-height: 80px; /* arbitrary */
       width: 100%; /* full screen width */
+      #help_page & {
+        height: 2px;
+        min-height: inherit;
+      }
+    }
+    article {
+      @include center;
+      width: $width;
     }
     #map-wrapper {
       clear: both;

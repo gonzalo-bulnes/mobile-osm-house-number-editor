@@ -3,6 +3,7 @@ Mobileosmhousenumbereditor::Application.routes.draw do
 
   root :to => "StaticPages#about"
   match "/about" => "StaticPages#about"
+  match "/help" => "StaticPages#help"
 
   match "/article" => "Pages#article"
   match "/home" => "HouseNumbers#new"

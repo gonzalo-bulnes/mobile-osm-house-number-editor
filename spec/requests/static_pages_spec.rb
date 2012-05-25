@@ -10,6 +10,12 @@ describe "Static pages" do
     it { should have_selector('p', text: 'Find me in /app/views/static_pages/about.html.haml') }
   end
 
+  describe "Help page" do
+    before { visit help_path }
+
+    it { should have_selector('body#help_page') }
+  end
+
   describe "Home page" do
     before { visit root_path }
     it "should be a page which exists" do
