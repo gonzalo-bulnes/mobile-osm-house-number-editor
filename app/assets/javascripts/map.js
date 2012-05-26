@@ -9,6 +9,12 @@
  *   lon: -70.68820
  *   zoom: 15
  */
+
+// Form elements
+var latInput = document.getElementById('house_number_latitude');
+var lngInput = document.getElementById('house_number_longitude');
+
+// Map
 var map = new L.Map('map');
 
 var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/dda9e9fdba4e42fe829f737c8032a2b3/997/256/{z}/{x}/{y}.png',
@@ -17,22 +23,32 @@ var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/dda9e9fdba4e42fe829f737c8032a2
 
 map.addLayer(cloudmade);
 
-map.on('locationfound', onLocationFound);
+map.on('locationfound', setHouseNumberLocationFromMapCenter);
 map.on('locationerror', onLocationError);
+map.on('dragend', setHouseNumberLocationFromMapCenter);
+/* FIXME The 'moveend' event should be enough, however it makes tha map unresponsive
+map.on('moveend', setHouseNumberLocationFromMapCenter); */
 
 map.locateAndSetView();
 
-function onLocationFound(e) {
-  //var radius = e.accuracy / 2;
-
-  //var marker = new L.Marker(e.latlng);
-  //map.addLayer(marker);
-  //marker.bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-  //var circle = new L.Circle(e.latlng, radius);
-  //map.addLayer(circle);
-}
-
 function onLocationError(e) {
   alert(e.message);
+}
+
+function setHouseNumberLocationFromMapCenter(e) {
+  /* Set the latitude and longitude form inputs
+   * from the coordinated of the center of the map.
+   *
+   * e : L.Event, provided by the Leaflet library
+   */
+
+  const PRECISION = 7; // See http://wiki.openstreetmap.org/wiki/Node
+
+  var mapCenter = e.target.getCenter();
+
+  latInput = document.getElementById('house_number_latitude');
+  lngInput = document.getElementById('house_number_longitude');
+
+  latInput.value = mapCenter.lat.toFixed(PRECISION);
+  lngInput.value = mapCenter.lng.toFixed(PRECISION);
 }
