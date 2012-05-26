@@ -11,6 +11,14 @@
       %p This applications still does nothing, it is a public alpha version which aims at collecting some usability feedback. Thank you for helping us!
       %p You can submit as many <em>house numbers</em> as you want. None of them will actually be submitted to the map, but each of them will help us to improve the user interface.
       %p Additionally, we'd love to read your direct feedback at <a href="mailto:#">feedback@example.com</a>.
+      #qr-wrapper
+        %h2 Go mobile!
+        %p
+          It seems you are at home. If you want to go out for a walk, you may want to use
+          = link_to "this QR code", image_path('shared/qr-64-soft.png')
+          to open our site on your mobile device.
+        #qr-wrapper-inner
+          = image_tag 'shared/qr-64-soft.png', alt: "QR coded URL: http://housenumbereditor.com", id: "qr"
     %section
       %h1 How to map
       %p You need an OpenStreetMap account to be allowed to edit the map. This application provides you an easy way to use your existing <abbr title="OpenStreetMap">OSM</abbr> account to sign in.

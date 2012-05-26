@@ -43,5 +43,6 @@ describe "Pages" do
     it "should have a form to create HouseNumbers" do
       should have_selector('form')
     end
+    it { should have_selector('div#qr-wrapper') }
   end 
 end
