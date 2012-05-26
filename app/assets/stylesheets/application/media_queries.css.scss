@@ -6,6 +6,7 @@
 // This example overrides the primary ('mobile first') styles
 // Modify as content requires.
 
+$almost-white: #fcfcfc;
 $almost-gray: #383838;
 $almost-gray-light: #444;
 $darkgray: #222;
@@ -27,7 +28,7 @@ $mdn-red: #f33;
 
 @mixin index {
   content: "";
-  border-color: transparent transparent white;
+  border-color: transparent transparent $almost-white;
   border-style: solid;
   border-width: 5px;
   margin-left: -5px;
@@ -133,7 +134,7 @@ a {
     clear: both;
     #banner {
       @include center;
-      background-color: white;
+      background-color: $almost-white;
       min-height: 80px; /* arbitrary */
       width: 100%; /* full screen width */
       #help_page & {
