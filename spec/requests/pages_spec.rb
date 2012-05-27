@@ -44,5 +44,8 @@ describe "Pages" do
       should have_selector('form')
     end
     it { should have_selector('div#qr-wrapper') }
+    it "should not load images which won't be displayed on mobile devices" do
+      should_not have_selector('#qr-wrapper img')
+    end
   end 
 end
