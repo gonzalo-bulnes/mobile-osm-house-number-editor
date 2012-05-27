@@ -15,7 +15,7 @@ var latInput = document.getElementById('house_number_latitude');
 var lngInput = document.getElementById('house_number_longitude');
 
 // Map
-var map = new L.Map('map');
+var map = new L.Map('map', { zoomControl: false });
 
 var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/dda9e9fdba4e42fe829f737c8032a2b3/997/256/{z}/{x}/{y}.png',
   cloudmadeAttribution = 'Map data &copy; 2012 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
