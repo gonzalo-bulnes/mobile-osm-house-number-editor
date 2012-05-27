@@ -97,6 +97,43 @@ a {
     }
   }
 
+  div#main {
+    clear: both;
+    margin-bottom: 11em; /* footer approximative height */
+    #banner {
+      display: none;
+    }
+    #map-wrapper {
+      display: none;
+    }
+  }
+
+  aside {
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    a {
+      color: $mdn-blue;
+    }
+    section {
+      margin: 0 3.125%; /* 10px / 320px (2 gutters) */
+      h1, h2 {
+        font-size: 1.714em; /* 24px / 14px */
+        margin: 1em 0;
+        a {
+          color: $gray-complement;
+          text-decoration: none;
+        }
+      }
+      &#alpha h1 {
+        color: $mdn-red;
+      }
+      #qr-wrapper {
+        display: none;
+      }
+    }
+  }
+
   footer {
     bottom: 0;
     position:absolute;
@@ -166,12 +203,13 @@ a {
     }
   }
 
-  /* Temporary Styles */
   div#main {
     clear: both;
+    margin-bottom: 6em; /* footer approximative height */
     #banner {
       @include center;
       background-color: $almost-white;
+      display: block;
       min-height: 80px; /* arbitrary */
       width: 100%; /* full screen width */
       #help_page & {
@@ -185,6 +223,7 @@ a {
     }
     #map-wrapper {
       clear: both;
+      display: block;
       min-height: 320px; /* quite arbitrary */
       position: relative;
       width: 100%;
@@ -312,31 +351,14 @@ a {
   }
 
   aside {
-    @include center;
-    margin-top: 0;
-    margin-bottom: 0;
-    overflow: hidden;
     width: $width;
-    a {
-      color: $mdn-blue;
-    }
     section {
       float: left;
       width: 31.250%; /* 300px / 960px (4 columns) */
       margin: 0 1.042%; /* 10px / 960px (2 gutters) */
-      h1, h2 {
-        font-size: 1.714em; /* 24px / 14px */
-        margin: 1em 0;
-        a {
-          color: $gray-complement;
-          text-decoration: none;
-        }
-      }
-      &#alpha h1 {
-        color: $mdn-red;
-      }
       #qr-wrapper {
         border-top: 1px dashed $almost-gray-light;
+        display: block;
         margin-top: 2.5em;
         overflow: hidden;
         h2 {
