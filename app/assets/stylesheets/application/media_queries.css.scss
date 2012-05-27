@@ -50,7 +50,24 @@ a {
   }
 }
 
-@media (min-width: 320px) {}
+@media (min-width: 320px) {
+
+  $width: 320px;
+
+  body {
+    background-color: $gray;
+    color: $gray-complement;
+  }
+
+  #header-wrapper,
+  div#main article,
+  #map-wrapper,
+  aside,
+  footer {
+    @include center;
+    width: $width;
+  }
+}
 
 @media (min-width: 480px) {}
 
@@ -60,13 +77,7 @@ a {
 
   $width: 960px;
 
-  body {
-    background-color: $gray;
-    color: $gray-complement;
-  }
-
   #header-wrapper {
-    @include center;
     width: $width;
   }
 
@@ -150,6 +161,7 @@ a {
       clear: both;
       min-height: 320px; /* quite arbitrary */
       position: relative;
+      width: 100%;
       #map {
         height: 100%;
         min-height: inherit;
