@@ -77,6 +77,7 @@ a {
     border-bottom: 1px solid $almost-gray;
     float: left;
     position: relative;
+    width: 100%;
     z-index: 8;
     h1 {
       float: left;
@@ -292,9 +293,12 @@ a {
     width: $width;
   }
 
-  header h1 a::before {
-    color: $mdn-yellow;
-    content: "Mobile! ";
+  header {
+    width: auto;
+    h1 a::before {
+      color: $mdn-yellow;
+      content: "Mobile! ";
+    }
   }
 
   nav {
