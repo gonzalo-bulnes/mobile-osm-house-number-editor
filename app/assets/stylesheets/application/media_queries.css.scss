@@ -60,7 +60,7 @@ a {
   }
 
   #header-wrapper,
-  div#main article,
+  div#main,
   #map-wrapper,
   aside,
   footer {
@@ -68,10 +68,16 @@ a {
     width: $width;
   }
 
+  #header-wrapper {
+    overflow: hidden;
+  }
+
   header {
-    background: transparent image_url('shared/isotype-32.png') no-repeat 10px center;
+    background: $gray image_url('shared/isotype-32.png') no-repeat 10px center;
+    border-bottom: 1px solid $almost-gray;
     float: left;
     position: relative;
+    z-index: 8;
     h1 {
       float: left;
       font-size: 1em;
@@ -89,26 +95,139 @@ a {
         &:focus, &:hover {
           @include insensitive;
         }
+      }
+    }
+  }
+
+  nav {
+    display: none; /* temporary */
+  }
+
+  div#main {
+    clear: both;
+    min-height: 480px; /* arbitrary (assume 320x480 pixels display) */
+    margin-bottom: 11em; /* footer approximative height */
+    position: relative;
+    #banner {
+      display: none;
+    }
+    #map-wrapper {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: $width;
+      #map {
+        height: 100%;
         &::before {
-          color: $mdn-yellow;
-          content: "Mobile! ";
+          content: "";
+          position: absolute;
+          border-color: rgba(27,27,27,.8) transparent transparent;
+          border-style: solid;
+          border-width: 20px;
+          left: 50%;
+          margin-left: -20px;
+          margin-top: -20px;
+          top: 50%;
+          z-index: 3;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          border-color: $gray transparent transparent;
+          border-style: solid;
+          border-width: 40px 20px;
+          left: 50%;
+          margin-left: -20px;
+          margin-top: -40px;
+          top: 50%;
+          z-index: 3;
+        }
+      }
+      #form-wrapper {
+        height: 50%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+        #form-wrapper-inner {
+          background-color: rgba(27,27,27,.8);
+          bottom: 8.333%; /* 20px / 240px */
+          height: 91.667%; /* 220px / 240px */
+          position: absolute;
+          width: 100%;
+          form {
+            background-color: $gray;
+            bottom: 9.091%; /* 20px / 220px */
+            height: 90.909%; /* 200px / 220px */
+            position: absolute;
+            width: 100%;
+            z-index: 3;
+            .field {
+              margin: 5px auto;
+              overflow: hidden;
+              width: auto;
+              label {
+                display: block;
+                float: left;
+                font-size: .86em;
+                margin: 2px 1.063% 2px 3.125%; /* 5px and 10px / 320px */
+                width: 30%;
+              }
+              input {
+                display: block;
+                float: right;
+                margin: auto 3.125% auto 1.063%; /* 10px and 5px / 320px */
+                text-align: center;
+                width: 55%;
+              }
+              &#housenumber {
+                margin-top: 1em;
+                label {
+                  margin-bottom: .5em;
+                  margin-top: .5em;
+                }
+                input {
+                  font-size: 1.5em;
+                }
+              }
+              &.hint label {
+                margin-right: 3.125%; /* 10px / 320px */
+                width: 93.5%;
+              }
+              &#preview, &#submit {
+                float: right;
+                margin-bottom: .5em;
+                margin-top: .5em;
+              }
+              &#preview {
+                margin-left: 3.125%; /* 10px / 320px */
+                margin-right: 1.067%; /* 5px / 320px */
+                width: 30%;
+                button {
+                  margin-bottom: 5px;
+                  margin-top: 4px;
+                  width: 90%;
+                }
+              }
+              &#submit {
+                margin-left: 1.067%; /* 5px / 320px */
+                margin-right: 3.125%; /* 10px / 320px */
+                width: 55%;
+                input {
+                  font-size: 1.5em;
+                  width: 90%;
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 
-  div#main {
-    clear: both;
-    margin-bottom: 11em; /* footer approximative height */
-    #banner {
-      display: none;
-    }
-    #map-wrapper {
-      display: none;
-    }
-  }
-
   aside {
+    display: none;
     margin-top: 0;
     margin-bottom: 0;
     overflow: hidden;
@@ -173,7 +292,13 @@ a {
     width: $width;
   }
 
+  header h1 a::before {
+    color: $mdn-yellow;
+    content: "Mobile! ";
+  }
+
   nav {
+    display: block; /* temporary */
     float: right;
     ul {
       @include reset;
@@ -206,6 +331,7 @@ a {
   div#main {
     clear: both;
     margin-bottom: 6em; /* footer approximative height */
+    width: 100%;
     #banner {
       @include center;
       background-color: $almost-white;
@@ -232,28 +358,13 @@ a {
         min-height: inherit;
         position: relative;
         &::before {
-          content: "";
-          position: absolute;
           border-color: transparent transparent transparent rgba(27,27,27,.8);
-          border-style: solid;
-          border-width: 20px;
-          left: 50%;
-          margin-left: -20px;
-          margin-top: -20px;
-          top: 50%;
-          z-index: 3;
         }
         &::after {
-          content: "";
-          position: absolute;
           border-color: transparent transparent transparent $darkgray;
-          border-style: solid;
           border-width: 20px 40px;
-          left: 50%;
           margin-left: -40px;
           margin-top: -20px;
-          top: 50%;
-          z-index: 3;
         }
       }
       #form-wrapper {
@@ -261,21 +372,22 @@ a {
         position: absolute;
         top: 0;
         width: 50%;
-        z-index: 2;
         #form-wrapper-inner {
-          background-color: rgba(27,27,27,.8);
           -webkit-border-radius: 20px;
              -moz-border-radius: 20px;
               -ms-border-radius: 20px;
                -o-border-radius: 20px;
                   border-radius: 20px;
           float: right;
+          height: auto;
           margin-right: 40px;
           margin-top: 2em; /* arbitrary */
           max-width: 440px; /* ( 50% of 960px ) - 40xp (margin right) */
           position: absolute;
+          bottom: auto;
           right: -20px;
           top: 0;
+          width: auto;
           form {
             background-color: $darkgray;
             color: $gray-complement;
@@ -284,30 +396,46 @@ a {
                 -ms-border-radius: 15px;
                  -o-border-radius: 15px;
                     border-radius: 15px;
+            height: auto;
             margin: 20px; /* transparent border width, see #map::after and ::before */
             //min-height: 230px;
             overflow: hidden;
             padding-top: 3px;
+            position: relative;
+            bottom: auto;
+            width: auto;
             .field {
               margin: 5px auto;
               overflow: hidden;
               width: auto;
               label {
                 display: block;
+                float: none;
                 font-size: .86em;
-                margin: 2px 10px;
+                margin-bottom: 2px 10px;
+                position: relative;
+                width: auto;
               }
               input {
                 margin: auto 10px;
+                position: relative;
                 text-align: center;
                 width: 12em;
               }
-              &#housenumber input {
-                display: block;
-                font-size: 32px;
-                font-weight: normal;
-                text-align: center;
-                width: 8em;
+              &#housenumber {
+                label {
+                  margin-bottom: auto;
+                  margin-top: auto;
+                }
+                input {
+                  display: block;
+                  font-size: 32px;
+                  font-weight: normal;
+                  margin-bottom: auto;
+                  margin-top: auto;
+                  text-align: center;
+                  width: 8em;
+                }
               }
               &#lat, &#lon {
                 margin: 5px auto;
@@ -322,6 +450,8 @@ a {
               }
               &#preview, &#submit {
                 float: right;
+                margin: auto;
+                width: auto;
               }
               &#preview button {
                 background-color: inherit;
@@ -332,6 +462,7 @@ a {
                 margin: 10px 10px 20px;
                 padding: 3px 4px 8px;
                 text-decoration: underline;
+                width: auto;
                 &:focus, &:hover {
                   background-color: inherit;
                   color: $mdn-yellow;
@@ -339,6 +470,7 @@ a {
               }
               &#submit input {
                 float: right;
+                font-size: inherit;
                 margin: 7px 10px 20px;
                 padding: 4px 10px;
                 width: auto;
@@ -351,6 +483,7 @@ a {
   }
 
   aside {
+    display: block;
     width: $width;
     section {
       float: left;
