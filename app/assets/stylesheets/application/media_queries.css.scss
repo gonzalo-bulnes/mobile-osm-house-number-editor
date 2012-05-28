@@ -158,6 +158,17 @@ aside {
   }
 }
 
+footer {
+  border-top: 1px solid $almost-gray;
+  margin-top: 2.5em;
+  width: 100%;
+  div {
+    font-size: .86em;
+    line-height: 1.5em;
+    margin: 0 3.125%; /* 10px / 320px (2 gutters) */
+  }
+}
+
 /* *** */
 
 @media (min-width: 320px) {
@@ -172,8 +183,7 @@ aside {
   #header-wrapper,
   div#main,
   #map-wrapper,
-  aside,
-  footer {
+  aside {
     width: $width;
   }
 
@@ -351,24 +361,22 @@ aside {
   }
 
   footer {
+    border-top-width: 0;
     bottom: 0;
-    position:absolute;
-    width: 100%;
+    margin-top: auto;
+    position: absolute;
     div {
       @include center;
       background-color: inherit;
       border-top: 1px solid $almost-gray;
       color: $lightgray;
-      font-size: .86em;
-      line-height: 1.5em;
-      margin-top: 2.5em;
-      margin-bottom: 1em;
+      margin: 2.5em auto 1em;
       overflow: hidden;
       /* footer div position should be set and is absolute by default */
       width: $width;
       p, small {
         float: left;
-        margin: 1em .5em;
+        margin: 1em .5em 0;
         a {
           color: $mdn-blue;
         }
@@ -624,6 +632,9 @@ aside {
   footer {
     div {
       width: $width;
+      p, small {
+        margin-bottom: 1em;
+      }
     }
   }
 }
