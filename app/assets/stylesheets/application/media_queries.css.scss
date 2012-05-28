@@ -133,6 +133,58 @@ header {
   }
 }
 
+#map {
+  display: none; /* Does Leaflet still load any tile? */
+}
+
+#form-wrapper {
+  #form-wrapper-inner {
+    border: 1px solid $almost-gray;
+    margin-left: 3.125%; /* 10px / 320px */
+    margin-right: 3.215%; /* 10px / 320px */
+    form {
+      margin-left: 3.125%; /* 10px / 320px */
+      margin-right: 3.125%; /* 10px / 320px */
+      overflow: hidden;
+      .field {
+        position: relative;
+        label {
+          display: block;
+          margin-top: .5em;
+        }
+        label, input {
+          width: 95%; /* arbitrary, inputs have borders */
+        }
+        &#submit, &#preview {
+          float: right;
+          margin-bottom: 1em;
+          margin-top: 2em;
+          width: 50%;
+          input, button {
+            font-size: 1.143em; /* 16px / 14px */
+            width: 100%;
+          }
+        }
+        &#preview {
+          display: none; /* The map is not displayed! */
+        }
+        &#submit {
+          border-top: 1px dashed $almost-gray;
+          margin-top: 1em;
+          padding-top: 1em;
+          width: 100%;
+          input {
+            width: 50%;
+          }
+        }
+        &.hint {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 aside {
   margin-top: 0;
   margin-bottom: 0;
@@ -228,6 +280,7 @@ footer {
       top: 0;
       width: $width;
       #map {
+        display: block;
         height: 100%;
         &::before {
           content: "";
@@ -262,14 +315,19 @@ footer {
         z-index: 2;
         #form-wrapper-inner {
           background-color: rgba(27,27,27,.8);
+          border-width: 0;
           bottom: 8.333%; /* 20px / 240px */
           height: 91.667%; /* 220px / 240px */
+          margin-left: auto;
+          margin-right: auto;
           position: absolute;
           width: 100%;
           form {
             background-color: $gray;
             bottom: 9.091%; /* 20px / 220px */
             height: 90.909%; /* 200px / 220px */
+            margin-left: auto;
+            margin-right: auto;
             position: absolute;
             width: 100%;
             z-index: 3;
@@ -278,7 +336,6 @@ footer {
               overflow: hidden;
               width: auto;
               label {
-                display: block;
                 float: left;
                 font-size: .86em;
                 margin: 2px 1.063% 2px 3.125%; /* 5px and 10px / 320px */
@@ -301,28 +358,34 @@ footer {
                   font-size: 1.5em;
                 }
               }
-              &.hint label {
-                margin-right: 3.125%; /* 10px / 320px */
-                width: 93.5%;
+              &.hint {
+                display: block;
+                label {
+                  margin-right: 3.125%; /* 10px / 320px */
+                  width: 93.5%;
+                }
               }
               &#preview, &#submit {
-                float: right;
                 margin-bottom: .5em;
                 margin-top: .5em;
               }
               &#preview {
+                display: block;
                 margin-left: 3.125%; /* 10px / 320px */
                 margin-right: 1.067%; /* 5px / 320px */
                 width: 30%;
                 button {
+                  font-size: auto;
                   margin-bottom: 5px;
                   margin-top: 4px;
                   width: 90%;
                 }
               }
               &#submit {
+                border-top-width: 0;
                 margin-left: 1.067%; /* 5px / 320px */
                 margin-right: 3.125%; /* 10px / 320px */
+                padding-top: 0; /* 'auto' is not allowed for padding */
                 width: 55%;
                 input {
                   font-size: 1.5em;
