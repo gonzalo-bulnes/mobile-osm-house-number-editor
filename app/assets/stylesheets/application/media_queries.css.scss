@@ -142,14 +142,29 @@ nav {
 
 div#main {
   margin-top: 1.8em;
-  #banner #no-map-warning {
-    border: 3px solid $almost-gray;
-    margin-bottom: 1.22em;
-    margin-left: 3.125%; /* 10px / 320px */
-    margin-right: 3.125%; /* 10px / 320px */
-    p {
-      margin-left: 3.333%; /* 10px / 300px */
-      margin-right: 3.333%; /* 10px / 300px */
+  #banner {
+    blockquote {
+      margin-left: 4.592%; /* 15px / 320px */
+      margin-right: 4.592%; /* 15px / 320px */
+      /* http://html5doctor.com/blockquote-q-cite/ */
+      quotes: "\201C" "\201D"; /* english quotes */
+      text-align: center;
+      &::before {
+        content: open-quote;
+      }
+      &::after {
+        content: close-quote;
+      }
+    }
+    #no-map-warning {
+      border: 3px solid $almost-gray;
+      margin-bottom: 1.22em;
+      margin-left: 3.125%; /* 10px / 320px */
+      margin-right: 3.125%; /* 10px / 320px */
+      p {
+        margin-left: 3.333%; /* 10px / 300px */
+        margin-right: 3.333%; /* 10px / 300px */
+      }
     }
   }
 }
@@ -442,8 +457,8 @@ footer {
         color: $mdn-red;
       }
       p {
-        margin-bottom: auto;
-        margin-top: auto;
+        //margin-bottom: auto; /* ? */
+        //margin-top: auto; /* ? */
       }
     }
   }
@@ -533,9 +548,16 @@ footer {
     #banner {
       @include center;
       background-color: $almost-white;
+      color: $almost-gray;
       display: block;
       min-height: 80px; /* arbitrary */
+      padding-bottom: .5em;
+      padding-top: .5em;
       width: 100%; /* full screen width */
+      blockquote {
+        font-size: 1.714em; /* 24px / 14px */
+        line-height: 1.5em;
+      }
       #help_page & {
         height: 2px;
         min-height: inherit;
