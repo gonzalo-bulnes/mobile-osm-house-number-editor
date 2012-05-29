@@ -124,11 +124,32 @@ header {
     padding: 0;
     text-align: center;
     a {
+      @include header-fit;
+      background-color: inherit;
       color: inherit;
+      display: block;
       text-decoration: none;
       &:focus, &:hover {
         @include insensitive;
       }
+    }
+  }
+}
+
+nav {
+  display: none;
+}
+
+div#main {
+  margin-top: 1.8em;
+  #banner #no-map-warning {
+    border: 3px solid $almost-gray;
+    margin-bottom: 1.22em;
+    margin-left: 3.125%; /* 10px / 320px */
+    margin-right: 3.125%; /* 10px / 320px */
+    p {
+      margin-left: 3.333%; /* 10px / 300px */
+      margin-right: 3.333%; /* 10px / 300px */
     }
   }
 }
@@ -143,8 +164,8 @@ header {
     margin-left: 3.125%; /* 10px / 320px */
     margin-right: 3.215%; /* 10px / 320px */
     form {
-      margin-left: 3.125%; /* 10px / 320px */
-      margin-right: 3.125%; /* 10px / 320px */
+      margin-left: 3.333%; /* 10px / 300px */
+      margin-right: 3.333%; /* 10px / 300px */
       overflow: hidden;
       .field {
         position: relative;
@@ -211,7 +232,7 @@ aside {
 }
 
 footer {
-  border-top: 1px solid $almost-gray;
+  border-top: 1px dashed $almost-gray;
   margin-top: 2.5em;
   width: 100%;
   div {
@@ -269,9 +290,13 @@ footer {
     clear: both;
     min-height: 480px; /* arbitrary (assume 320x480 pixels display) */
     margin-bottom: 11em; /* footer approximative height */
+    margin-top: auto;
     position: relative;
     #banner {
       display: none;
+      #no-map-warning {
+        display: none;
+      }
     }
     #map-wrapper {
       height: 100%;
