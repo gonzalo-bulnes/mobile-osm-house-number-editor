@@ -47,5 +47,10 @@ describe "Pages" do
     it "should not load images which won't be displayed on mobile devices" do
       should_not have_selector('#qr-wrapper img')
     end
+    it "should not have invalid HTML5 input tags" do
+      # No size attribute should be used if input type is 'hidden'
+      # See http://dev.w3.org/html5/spec/the-input-element.html
+      should_not have_selector('input[type="hidden"][size]')
+    end
   end 
 end

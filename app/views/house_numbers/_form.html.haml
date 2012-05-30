@@ -1,5 +1,5 @@
 = form_for(@housenumber) do |f|
-  = f.text_field :changeset, type: "hidden"
+  = f.hidden_field :changeset, type: "hidden"
 
   .field#housenumber
     = f.label :value, "House number"
