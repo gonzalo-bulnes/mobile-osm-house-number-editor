@@ -144,8 +144,10 @@ div#main {
   margin-top: 1.8em;
   #banner {
     blockquote {
+      margin-bottom: 1.714em; 
       margin-left: 4.592%; /* 15px / 320px */
       margin-right: 4.592%; /* 15px / 320px */
+      margin-top: 1.714em;
       /* http://html5doctor.com/blockquote-q-cite/ */
       quotes: "\201C" "\201D"; /* english quotes */
       text-align: center;
@@ -555,8 +557,8 @@ footer {
       padding-top: .5em;
       width: 100%; /* full screen width */
       blockquote {
-        font-size: 1.714em; /* 24px / 14px */
-        line-height: 1.5em;
+        font-size: 1.143em; /* 16px / 14px */
+        line-height: 1.714em;
       }
       #help_page & {
         height: 2px;
