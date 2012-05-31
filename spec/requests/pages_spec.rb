@@ -52,5 +52,9 @@ describe "Pages" do
       # See http://dev.w3.org/html5/spec/the-input-element.html
       should_not have_selector('input[type="hidden"][size]')
     end
+    it "should not have a temporary default changeset value" do
+      pending "Changesets are not implemented yet, having a default value allows to submit the form even if changest is an hidden input."
+      should_not have_selector('input[type="hidden"][value="default_changeset"]')
+    end
   end 
 end
