@@ -7,8 +7,9 @@
     #wrapper
       = render "chromeframe"
       #header-wrapper
-        = render "header"
-        = render "nav"
+        #header-wrapper-inner
+          = render "header"
+          = render "nav"
 
       #main{ :role => "main" }
         = render "flashes"

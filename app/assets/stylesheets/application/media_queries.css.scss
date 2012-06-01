@@ -105,7 +105,7 @@ html, body {
   position: relative;
 }
 
-#header-wrapper,
+#header-wrapper-inner,
 div#main,
 #map-wrapper,
 aside,
@@ -270,14 +270,15 @@ footer {
     color: $gray-complement;
   }
 
-  #header-wrapper,
+  #header-wrapper-inner,
   div#main,
   #map-wrapper,
   aside {
     width: $width;
   }
 
-  #header-wrapper {
+  #header-wrapper,
+  #header-wrapper-inner {
     overflow: hidden;
   }
 
@@ -441,6 +442,23 @@ footer {
     }
   }
 
+  .cssgradients #header-wrapper {
+    background: -webkit-linear-gradient(top, #3c3c3c, #111);
+    background:    -moz-linear-gradient(top, #3c3c3c, #111);
+    background:     -ms-linear-gradient(top, #3c3c3c, #111);
+    background:      -o-linear-gradient(top, #3c3c3c, #111);
+    background:         linear-gradient(top, #3c3c3c, #111);
+    header, nav {
+      background-color: transparent;
+      a {
+        background-color: inherit;
+      }
+    }
+    header {
+      border-bottom-width: 0;
+    }
+  }
+
   aside {
     display: none;
     a {
@@ -498,7 +516,7 @@ footer {
 
   $width: 960px;
 
-  #header-wrapper {
+  #header-wrapper-inner {
     width: $width;
   }
 
