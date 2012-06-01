@@ -622,19 +622,18 @@ footer {
             margin: 20px; /* transparent border width, see #map::after and ::before */
             //min-height: 230px;
             overflow: hidden;
-            padding-top: 3px;
             position: relative;
             bottom: auto;
             width: auto;
             .field {
-              margin: 5px auto;
+              margin: 5px 10px;
               overflow: hidden;
               width: auto;
               label {
                 display: block;
                 float: none;
                 font-size: .86em;
-                margin-bottom: 2px 10px;
+                margin: 2px 10px;
                 position: relative;
                 width: auto;
               }
@@ -660,7 +659,8 @@ footer {
                 }
               }
               &#lat, &#lon {
-                margin: 5px auto;
+                margin-bottom: 5px;
+                margin-top: 5px;
                 overflow: hidden;
               }
               &#lat label, &#lon label {
@@ -674,6 +674,9 @@ footer {
                 float: right;
                 margin: auto;
                 width: auto;
+              }
+              &#submit {
+                margin-right: 10px;
               }
               &#preview button {
                 background-color: inherit;
