@@ -1,12 +1,11 @@
 Mobileosmhousenumbereditor::Application.routes.draw do
   get "pages/article"
 
-  root :to => "StaticPages#about"
+  root :to => "HouseNumbers#new"
   match "/about" => "StaticPages#about"
   match "/help" => "StaticPages#help"
 
   match "/article" => "Pages#article"
-  match "/home" => "HouseNumbers#new"
 
   resources :house_numbers, :only => [:index, :show, :new, :create, :destroy]
   # The priority is based upon order of creation:

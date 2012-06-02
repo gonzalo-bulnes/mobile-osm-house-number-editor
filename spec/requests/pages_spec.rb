@@ -11,7 +11,7 @@ describe "Pages" do
   end
 
   describe "Home page" do 
-    before { visit home_path }
+    before { visit root_path }
 
     it "should have basic structure" do
       should have_selector('header')
