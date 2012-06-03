@@ -113,6 +113,7 @@ html, body {
 
 #header-wrapper-inner,
 div#main,
+#content-wrapper,
 #map-wrapper,
 aside,
 footer {
@@ -329,6 +330,7 @@ footer {
         display: none;
       }
     }
+    #content-wrapper,
     #map-wrapper {
       height: 100%;
       left: 0;
@@ -477,6 +479,7 @@ footer {
         border-bottom-width: 0;
       }
     }
+    div#main #content-wrapper,
     div#main #map-wrapper {
       #map::after {
         border-top-color: #080808;
@@ -619,6 +622,7 @@ footer {
       @include center;
       width: $width;
     }
+    #content-wrapper,
     #map-wrapper {
       clear: both;
       display: block;
@@ -772,6 +776,7 @@ footer {
     }
   }
 
+  .cssgradients div#main #content-wrapper,
   .cssgradients div#main #map-wrapper {
     #map::after {
       border-left-color: #111;
