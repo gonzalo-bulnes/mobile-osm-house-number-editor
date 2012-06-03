@@ -9,7 +9,7 @@ class HouseNumbersController < ApplicationController
       flash[:success] = "Welcome!"
       redirect_to @housenumber # Shortcut to house_number_path
     else
-      render 'new'
+      render 'pages/home'
     end
   end
 

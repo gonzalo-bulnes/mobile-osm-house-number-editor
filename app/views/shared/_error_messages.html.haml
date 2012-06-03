@@ -1,0 +1,6 @@
+- if @housenumber.errors.any?
+  #error_explanation
+    = "The form contains " + pluralize(@housenumber.errors.count, "error") + "."
+    %ul
+      - @housenumber.errors.full_messages.each do |msg|
+        %li= msg

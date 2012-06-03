@@ -92,6 +92,11 @@ abbr {
   cursor: help;
 }
 
+.field_with_errors {
+  color: $mdn-red;
+  font-weight: bold;
+}
+
 /* Basic Layout */
 
 html, body {

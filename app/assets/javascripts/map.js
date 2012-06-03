@@ -23,7 +23,8 @@ var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/dda9e9fdba4e42fe829f737c8032a2
 
 map.addLayer(cloudmade);
 
-map.on('locationfound', setHouseNumberLocationFromMapCenter);
+/* FIXME The 'locationfound' event shouldn't interfere with invalid forms! */
+// map.on('locationfound', setHouseNumberLocationFromMapCenter);
 map.on('locationerror', onLocationError);
 map.on('dragend', setHouseNumberLocationFromMapCenter);
 /* FIXME The 'moveend' event should be enough, however it makes tha map unresponsive
