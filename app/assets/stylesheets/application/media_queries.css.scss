@@ -24,6 +24,7 @@ $lightgray: #aaa;
 $mdn-yellow: #f8d575;
 $mdn-blue: #0cf;
 $mdn-red: #f33;
+$mdn-green: #a7df38;
 // For reference only: $width is also set in media queries.
 $width: 100%;
 
@@ -90,6 +91,11 @@ a {
 abbr {
   border-width: 0;
   cursor: help;
+}
+
+.field_with_errors {
+  color: $mdn-red;
+  font-weight: bold;
 }
 
 /* Basic Layout */
@@ -184,6 +190,13 @@ div#main {
       margin-left: 3.333%; /* 10px / 300px */
       margin-right: 3.333%; /* 10px / 300px */
       overflow: hidden;
+      #flash {
+        border-bottom: 1px dashed $almost-gray;
+        overflow: hidden;
+        p {
+          text-align: center;
+        }
+      }
       .field {
         position: relative;
         label {
@@ -374,6 +387,9 @@ footer {
             position: absolute;
             width: 100%;
             z-index: 3;
+            #flash {
+              display: none;
+            }
             .field {
               margin: 5px auto;
               overflow: hidden;
@@ -659,6 +675,20 @@ footer {
             position: relative;
             bottom: auto;
             width: auto;
+            #flash {
+              border-bottom-width: 0;
+              display: block;
+              position: absolute;
+              right: 1em; /* arbitrary >~ 10px */
+              text-align: right;
+              top: 1em; /* see #housenumber .field */
+              p {
+                color: $mdn-green;
+                font-size: 0.86em;
+                font-weight: bold;
+                margin-top: 0;
+              }
+            }
             .field {
               margin: 5px 10px;
               overflow: hidden;

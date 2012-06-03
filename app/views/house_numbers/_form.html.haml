@@ -1,20 +1,40 @@
 = form_for(@housenumber) do |f|
-  = f.hidden_field :changeset, type: "hidden"
+
+  = render 'flashes'
+
+  - if params[:house_number].nil?
+    = f.hidden_field :changeset, type: "hidden", value: "default_changeset"
+  - else
+    = f.hidden_field :changeset, type: "hidden", value: "default_changeset", value: params[:house_number][:changeset]
 
   .field#housenumber
-    = f.label :value, "House number"
-    = f.text_field :value, placeholder: "e.g. 5435bis"
+    -if @housenumber.errors[:value][0]
+      = f.label :value, "House number " + @housenumber.errors[:value][0] + "!"
+    - else
+      = f.label :value, "House number"
+
+    - if params[:house_number].nil?
+      = f.text_field :value, placeholder: "e.g. 5435bis"
+    - else
+      = f.text_field :value, placeholder: "e.g. 5435bis",  value: params[:house_number][:value]
 
   .field.hint
     %label Fill the location in or slip the map
 
   .field#lat
     = f.label :latitude
-    = f.text_field :latitude, placeholder: "e.g. -33.127803"
+    - if params[:house_number].nil?
+      = f.text_field :latitude, placeholder: "e.g. -33.127803"
+    - else
+      = f.text_field :latitude, placeholder: "e.g. -33.127803", value: params[:house_number][:latitude]
 
   .field#lon
     = f.label :longitude
-    = f.text_field :longitude, placeholder: "e.g. -70.531570"
+    - if params[:house_number].nil?
+      = f.text_field :longitude, placeholder: "e.g. -70.531570"
+    - else
+      = f.text_field :longitude, placeholder: "e.g. -70.531570", value: params[:house_number][:longitude]
+
 
   .field#submit
     = f.submit "Submit!"
