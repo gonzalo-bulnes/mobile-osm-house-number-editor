@@ -1,5 +1,7 @@
 = form_for(@housenumber) do |f|
 
+  = render 'flashes'
+
   - if params[:house_number].nil?
     = f.hidden_field :changeset, type: "hidden", value: "default_changeset"
   - else
