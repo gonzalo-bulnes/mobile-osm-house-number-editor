@@ -1,4 +1,6 @@
 Mobileosmhousenumbereditor::Application.routes.draw do
+  devise_for :users
+
   get "pages/article"
 
   root :to => "HouseNumbers#new"
