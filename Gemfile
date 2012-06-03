@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '>= 3.2.3'
 gem 'pg', '0.12.2'
 gem 'haml'
+gem 'devise', '>= 2.1.0'
 
 group :development, :test do
   gem 'guard-rspec', '0.5.5'
-  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-rails', '>= 2.10.1'
   gem 'annotate', '~> 2.4.1.beta'
+  gem 'factory_girl_rails', '>= 3.3.0'
 end
 
 # Gems used only for assets and not required
@@ -20,18 +22,23 @@ group :assets do
   gem 'compass-h5bp'
 end
 
-gem 'jquery-rails', '2.0.0'
+gem 'jquery-rails', '>= 2.0.0'
 gem 'haml-rails'
 gem 'html5-rails'
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-rails', '>= 2.10.1'
   # Specific gems for GNU/Linux
   gem 'rb-inotify', '0.8.8'
   gem 'libnotify', '0.5.9'
   # Spork
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
+  gem 'factory_girl_rails', '>= 3.3.0'
+  gem 'email_spec', '>= 1.2.1'
+  gem 'cucumber-rails', '>= 1.3.0', :require => false
+  gem 'database_cleaner', '>= 0.7.2'
+  gem 'launchy', '>= 2.1.0'
 end
 
