@@ -20,5 +20,5 @@ production:
   adapter: postgresql
   database: mousme_prod
   pool: 5
-  username: gonzalo
+  username: deploy
   password: f4kepaSs_W0rd
