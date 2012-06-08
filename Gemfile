@@ -5,6 +5,11 @@ gem 'pg', '0.12.2'
 gem 'haml'
 gem 'devise', '>= 2.1.0'
 
+group :development do
+  gem 'capistrano'
+  gem 'rvm-capistrano', '>= 1.1.0'
+end
+
 group :development, :test do
   gem 'guard-rspec', '0.5.5'
   gem 'rspec-rails', '>= 2.10.1'
