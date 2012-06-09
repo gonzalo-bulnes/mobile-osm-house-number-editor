@@ -48,6 +48,10 @@ Mobileosmhousenumbereditor::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
 
+  # Precompile *all* assets, except those that start with underscore
+  # See http://blog.55minutes.com/2012/01/getting-compass-to-work-with-rails-31-and-32/
+  config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
