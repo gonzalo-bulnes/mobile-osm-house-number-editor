@@ -21,6 +21,7 @@ $darkgray: #222;
 $gray: #333;
 $gray-complement: #f0f0f0;
 $lightgray: #aaa;
+$verylightgray: #eee;
 $mdn-yellow: #f8d575;
 $mdn-blue: #0cf;
 $mdn-red: #f33;
@@ -601,6 +602,7 @@ footer {
     margin-bottom: 6em; /* footer approximative height */
     width: 100%;
     #banner {
+      border-bottom: 1px solid $verylightgray;
       @include center;
       background-color: $almost-white;
       color: $almost-gray;
