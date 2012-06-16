@@ -55,7 +55,7 @@ end
 # See http://stackoverflow.com/questions/5218902/tail-production-log-with-capistrano-how-to-stop-it
 desc "tail production log files"
 task :tail_logs, :roles => :app do
-  run "tail -f #{shared_path}/log/production.log" do |channel, stream, data|
+  run "tail -f #{shared_path}/log/#{stage}.log" do |channel, stream, data|
     trap("INT") { puts 'Interupted'; exit 0; }
     puts # for an extra line break before the host name
     puts "#{channel[:host]}: #{data}"
