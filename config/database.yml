@@ -16,6 +16,13 @@ test:
   username: gonzalo
   password: f4kepaSs_W0rd
 
+qastaging:
+  adapter: postgresql
+  database: mousme_qastaging
+  pool: 5
+  username: deploy
+  password: f4kepaSs_W0rd
+
 production:
   adapter: postgresql
   database: mousme_prod

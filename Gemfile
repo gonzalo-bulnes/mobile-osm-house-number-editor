@@ -8,6 +8,7 @@ gem 'devise', '>= 2.1.0'
 group :development do
   gem 'capistrano'
   gem 'rvm-capistrano', '>= 1.1.0'
+  gem 'capistrano-ext'
 end
 
 group :development, :test do
