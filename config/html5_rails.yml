@@ -22,5 +22,8 @@ defaults: &defaults
 :staging:
   <<: *defaults
 
+:qastaging:
+  <<: *defautls
+
 :production:
   <<: *defaults
