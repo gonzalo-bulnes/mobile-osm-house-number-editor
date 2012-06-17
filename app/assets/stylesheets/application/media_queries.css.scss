@@ -20,6 +20,7 @@ $almost-gray-light: #444;
 $darkgray: #222;
 $gray: #333;
 $gray-complement: #f0f0f0;
+$gray-complement-darker: #eee;
 $lightgray: #aaa;
 $verylightgray: #eee;
 $mdn-yellow: #f8d575;
@@ -558,7 +559,7 @@ footer {
               margin-top: 10px;
               float: left;
               input {
-                border: 1px solid #555;
+                border: 2px solid #444;
                 font-size: 1.142em;
                 padding: .3em 0 .3em;
                 text-align: center;
@@ -588,8 +589,18 @@ footer {
                 right: 0;
                 width: 28%;
                 input {
+                  background-color: $gray;
+                  border-width: 1px;
+                  color: $gray-complement;
                   height: 100%;
                   width: 100%;
+                  &:focus, &:hover {
+                    background-color: $almost-gray;
+                  }
+                  &:active {
+                    background-color: inherit;
+                    color: $gray-complement-darker;
+                  }
                 }
               }
             }
@@ -614,6 +625,27 @@ footer {
         -ms-border-radius: 4px;
          -o-border-radius: 4px;
             border-radius: 4px;
+  }
+  .cssgradients #map-wrapper #form-wrapper #form-wrapper-inner form .field {
+    &#submit {
+        input {
+          background: -webkit-linear-gradient(top, #303030, #111);
+          background:    -moz-linear-gradient(top, #303030, #111);
+          background:     -ms-linear-gradient(top, #303030, #111);
+          background:      -o-linear-gradient(top, #303030, #111);
+          background:         linear-gradient(top, #303030, #111);
+        &:focus, &:hover {
+          background: -webkit-linear-gradient(top, #3c3c3c, #111);
+          background:    -moz-linear-gradient(top, #3c3c3c, #111);
+          background:     -ms-linear-gradient(top, #3c3c3c, #111);
+          background:      -o-linear-gradient(top, #3c3c3c, #111);
+          background:         linear-gradient(top, #3c3c3c, #111);
+        }
+        &:active {
+          background:    -moz-linear-gradient(bottom, #222, #111);
+        }
+      }
+    }
   }
   /* End of lean mobile layout spike */
 
