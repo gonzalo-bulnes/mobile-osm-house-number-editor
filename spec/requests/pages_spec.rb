@@ -56,5 +56,9 @@ describe "Pages" do
       pending "Changesets are not implemented yet, having a default value allows to submit the form even if changest is an hidden input."
       should_not have_selector('input[type="hidden"][value="default_changeset"]')
     end
+    it "should reflect the rails environment" do
+      # How can I simulate RAILS_ENV=qastaging ?
+      should have_selector('body.demo') unless Rails.env.production?
+    end
   end 
 end
