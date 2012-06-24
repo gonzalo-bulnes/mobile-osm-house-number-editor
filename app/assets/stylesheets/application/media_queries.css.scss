@@ -286,6 +286,10 @@ footer {
     color: $gray-complement;
   }
 
+  body.demo {
+    background: $gray image_url('shared/qastaging-indexed.png') repeat left top;
+  }
+
   #header-wrapper-inner,
   div#main,
   #map-wrapper,
