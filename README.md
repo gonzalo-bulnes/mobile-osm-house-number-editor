@@ -1,3 +1,5 @@
+<img src="https://gonzalobulnes.com/shared/isotype-96.png" alt="" height="96" width="96" />
+
 Mobile OSM House Number Editor
 ==============================
 
