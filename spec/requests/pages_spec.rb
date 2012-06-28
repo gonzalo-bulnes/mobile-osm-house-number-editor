@@ -76,5 +76,8 @@ describe "Pages" do
     it "should have apple-touch-icon-precomposed for Android devices" do
       should have_selector('link[rel="apple-touch-icon-precomposed"]')
     end
+    it "should be apple-mobile-web-app-capable" do
+      should have_selector('meta[name="apple-mobile-web-app-capable"][content="yes"]')
+    end
   end 
 end
