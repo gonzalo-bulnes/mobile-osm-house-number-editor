@@ -61,13 +61,13 @@ describe "Pages" do
       should have_selector('body.demo') unless Rails.env.production?
     end
     it "should have apple-touch-icon-precomposed" do
-      pending "No icons have been precomposed yet."
       should have_selector('link[rel="apple-touch-icon-precomposed"][sizes="144x144"]')
       should have_selector('link[rel="apple-touch-icon-precomposed"][sizes="114x114"]')
       should have_selector('link[rel="apple-touch-icon-precomposed"][sizes="72x72"]')
       should have_selector('link[rel="apple-touch-icon-precomposed"]')
     end
     it "should have apple-touch-icons" do
+      pending "Standard icons are replaced by precomposed icons."
       should have_selector('link[rel="apple-touch-icon"][sizes="144x144"]')
       should have_selector('link[rel="apple-touch-icon"][sizes="114x114"]')
       should have_selector('link[rel="apple-touch-icon"][sizes="72x72"]')

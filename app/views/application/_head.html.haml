@@ -18,17 +18,14 @@
   %meta{ name: "apple-mobile-web-app-capable", content: "yes" }
   -# Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons
   <!-- For third-generation iPad with high-resolution Retina display: -->
-  %link{ rel: "apple-touch-icon", sizes: "144x144", href: image_path("shared/apple-touch-icon-144x144.png")}
+  %link{ rel: "apple-touch-icon-precomposed", sizes: "144x144", href: image_path("shared/apple-touch-icon-144x144-precomposed.png")}
   <!-- For iPhone with high-resolution Retina display: -->
-  %link{ rel: "apple-touch-icon", sizes: "114x114", href: image_path("shared/apple-touch-icon-114x114.png")}
+  %link{ rel: "apple-touch-icon-precomposed", sizes: "114x114", href: image_path("shared/apple-touch-icon-114x114-precomposed.png")}
   <!-- For first- and second-generation iPad: -->
-  %link{ rel: "apple-touch-icon", sizes: "72x72", href: image_path("shared/apple-touch-icon-72x72.png")}
+  %link{ rel: "apple-touch-icon-precomposed", sizes: "72x72", href: image_path("shared/apple-touch-icon-72x72-precomposed.png")}
   <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  -# Android will pick the first one with no size attribute
+  -# Android will pick that with no size attribute
   %link{ rel: "apple-touch-icon-precomposed", href: image_path("shared/apple-touch-icon-precomposed.png")}
-  -# Others will pick the last defined one
-  %link{ rel: "apple-touch-icon", href: image_path("shared/apple-touch-icon.png")}
-
 
   = render "stylesheets"
 
