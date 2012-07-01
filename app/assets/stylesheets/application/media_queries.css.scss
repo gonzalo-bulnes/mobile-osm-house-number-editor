@@ -465,7 +465,8 @@ footer {
                 border-top-width: 0;
                 margin-left: 1.067%; /* 5px / 320px */
                 margin-right: 3.125%; /* 10px / 320px */
-                padding-top: 0; /* 'auto' is not allowed for padding */
+                padding-bottom: 1px; /* compensate for border-width 2px of other inputs */
+                padding-top: 1px; /* compensate for border-width 2px of other inputs */
                 width: 55%;
                 input {
                   font-size: 1.5em;
