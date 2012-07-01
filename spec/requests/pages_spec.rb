@@ -60,5 +60,24 @@ describe "Pages" do
       # How can I simulate RAILS_ENV=qastaging ?
       should have_selector('body.demo') unless Rails.env.production?
     end
+    it "should have apple-touch-icon-precomposed" do
+      should have_selector('link[rel="apple-touch-icon-precomposed"][sizes="144x144"]')
+      should have_selector('link[rel="apple-touch-icon-precomposed"][sizes="114x114"]')
+      should have_selector('link[rel="apple-touch-icon-precomposed"][sizes="72x72"]')
+      should have_selector('link[rel="apple-touch-icon-precomposed"]')
+    end
+    it "should have apple-touch-icons" do
+      pending "Standard icons are replaced by precomposed icons."
+      should have_selector('link[rel="apple-touch-icon"][sizes="144x144"]')
+      should have_selector('link[rel="apple-touch-icon"][sizes="114x114"]')
+      should have_selector('link[rel="apple-touch-icon"][sizes="72x72"]')
+      should have_selector('link[rel="apple-touch-icon"]')
+    end
+    it "should have apple-touch-icon-precomposed for Android devices" do
+      should have_selector('link[rel="apple-touch-icon-precomposed"]')
+    end
+    it "should be apple-mobile-web-app-capable" do
+      should have_selector('meta[name="apple-mobile-web-app-capable"][content="yes"]')
+    end
   end 
 end

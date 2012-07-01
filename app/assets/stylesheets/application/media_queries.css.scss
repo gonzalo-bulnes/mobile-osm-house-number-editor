@@ -415,6 +415,12 @@ footer {
                 margin: auto 3.125% auto 1.063%; /* 10px and 5px / 320px */
                 text-align: center;
                 width: 55%;
+                &:focus {
+                  border-color: $mdn-yellow;
+                }
+              }
+              .field_with_errors input {
+                border-color: #e33; /* almost $mdn-red */
               }
               &#housenumber {
                 margin-top: 1em;
@@ -442,6 +448,7 @@ footer {
                   color: $gray-complement;
                   &:focus, &:hover {
                     background-color: $almost-gray;
+                    border-color: #444; /* see input:focus */
                   }
                   &:active {
                     background-color: inherit;
@@ -465,7 +472,8 @@ footer {
                 border-top-width: 0;
                 margin-left: 1.067%; /* 5px / 320px */
                 margin-right: 3.125%; /* 10px / 320px */
-                padding-top: 0; /* 'auto' is not allowed for padding */
+                padding-bottom: 1px; /* compensate for border-width 2px of other inputs */
+                padding-top: 1px; /* compensate for border-width 2px of other inputs */
                 width: 55%;
                 input {
                   font-size: 1.5em;
@@ -596,7 +604,7 @@ footer {
   }
 }
 
-@media (min-width: 320px) and (max-width: 960px) {
+@media (min-width: 320px) and (max-width: 959px) {
   /* If Javascript is available, a leaner layout can be used (see SI 30450553). */
 
   .js #wrapper {
@@ -734,6 +742,64 @@ footer {
     display: none;
   }
 
+}
+
+@media
+(min-width: 320px) and (-webkit-device-pixel-ratio: 1.5),
+(min-width: 320px) and (   -moz-device-pixel-ratio: 1.5),
+(min-width: 320px) and (     -o-device-pixel-ratio: 3/2),
+(min-width: 320px) and (        device-pixel-ratio: 1.5) {
+  /* This section requires to be tested on a real device.
+   * It has been estabished using the Opera Mobile Emulator for HTC Desire,
+   * however similar styles are unadapted to Safari / iPhone 4S (real device)
+   * which behaves as described in: 
+   * http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
+   * See the (device-pixel-ratio: 2) section for details.
+   */
+  body {
+    font-size: 1.5em;
+  }
+  #header-wrapper-inner {
+    width: 100%;
+  }
+  header {
+    background: $gray image_url('shared/isotype-32@2x.png') no-repeat 10px center;
+    background-size: 48px;
+    h1 {
+      font-size: 1.5em;
+      text-align: left;
+      a {
+        margin-left: 67px; /* 10px + (image) 48px + 9px */
+      }
+    }
+  }
+  .js div#main {
+    #map-wrapper {
+      #map::before {
+        border-width: 3px;
+      }
+      #form-wrapper #form-wrapper-inner form {
+        .field, .field#housenumber {
+          font-size: 1.5em;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media
+(min-width: 320px) and (-webkit-device-pixel-ratio: 2),
+(min-width: 320px) and (   -moz-device-pixel-ratio: 2),
+(min-width: 320px) and (     -o-device-pixel-ratio: 2),
+(min-width: 320px) and (        device-pixel-ratio: 2) {
+  body.demo {
+    background-size: 99px; /* 198px / 2 */
+  }
+  header {
+    background: $gray image_url('shared/isotype-32@2x.png') no-repeat 10px center;
+    background-size: 32px;
+  }
 }
 
 @media (min-width: 480px) {}
