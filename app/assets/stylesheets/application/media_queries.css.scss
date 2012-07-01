@@ -736,6 +736,64 @@ footer {
 
 }
 
+@media
+(min-width: 320px) and (-webkit-device-pixel-ratio: 1.5),
+(min-width: 320px) and (   -moz-device-pixel-ratio: 1.5),
+(min-width: 320px) and (     -o-device-pixel-ratio: 3/2),
+(min-width: 320px) and (        device-pixel-ratio: 1.5) {
+  /* This section requires to be tested on a real device.
+   * It has been estabished using the Opera Mobile Emulator for HTC Desire,
+   * however similar styles are unadapted to Safari / iPhone 4S (real device)
+   * which behaves as described in: 
+   * http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
+   * See the (device-pixel-ratio: 2) section for details.
+   */
+  body {
+    font-size: 1.5em;
+  }
+  #header-wrapper-inner {
+    width: 100%;
+  }
+  header {
+    background: $gray image_url('shared/isotype-32@2x.png') no-repeat 10px center;
+    background-size: 48px;
+    h1 {
+      font-size: 1.5em;
+      text-align: left;
+      a {
+        margin-left: 67px; /* 10px + (image) 48px + 9px */
+      }
+    }
+  }
+  .js div#main {
+    #map-wrapper {
+      #map::before {
+        border-width: 3px;
+      }
+      #form-wrapper #form-wrapper-inner form {
+        .field, .field#housenumber {
+          font-size: 1.5em;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media
+(min-width: 320px) and (-webkit-device-pixel-ratio: 2),
+(min-width: 320px) and (   -moz-device-pixel-ratio: 2),
+(min-width: 320px) and (     -o-device-pixel-ratio: 2),
+(min-width: 320px) and (        device-pixel-ratio: 2) {
+  body.demo {
+    background-size: 99px; /* 198px / 2 */
+  }
+  header {
+    background: $gray image_url('shared/isotype-32@2x.png') no-repeat 10px center;
+    background-size: 32px;
+  }
+}
+
 @media (min-width: 480px) {}
 
 @media (min-width: 720px) {}
