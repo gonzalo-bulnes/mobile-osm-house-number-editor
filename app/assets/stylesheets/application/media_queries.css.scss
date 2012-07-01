@@ -802,13 +802,10 @@ footer {
   }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 480px) and (max-width: 959px) and (min-aspect-ratio: 1/1) {
 
-  /* Landscape spike */
+  /* Lean landscape spike */
 
-  #header-wrapper, #map-wrapper {
-    display: none;
-  }
   #header-wrapper {
     display: block;
     position: absolute;
@@ -823,20 +820,31 @@ footer {
       width: 100%;
     }
     header {
+      background-position: 4px center; /* 10px - 6px (arbitrary) */
       margin-left: 24px;
-      width: 48px;
-      h1 a {
-        display: none;
+      width: 100%;
+      h1 {
+        height: 100%;
+        a {
+          height: 100%;
+          margin-left: 40px; /* 48px - 8px (arbitrary) */
+          .long {
+            display: none;
+          }
+        }
       }
     }
   }
   .js.cssgradients #header-wrapper {
-      /* Keep the gradient left top to minimize the form-#map::after transition. */
-      background:-webkit-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
-      background:   -moz-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
-      background:    -ms-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
-      background:     -o-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
-      background:        linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+    /* Keep the gradient left top to minimize the form-#map::before transition. */
+    background:-webkit-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+    background:   -moz-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+    background:    -ms-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+    background:     -o-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+    background:        linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+  }
+  .js.cssgradients div#main #map-wrapper #map::before {
+    border-left-color: #111;
   }
   .js.borderradius #header-wrapper {
     border-radius: 0px 2px 2px 0px;
@@ -856,7 +864,7 @@ footer {
           content: "";
           display: block;
           position: absolute;
-          border-color: transparent transparent transparent #111; /* see gradient, should it be $gray for consitency? */
+          border-color: transparent transparent transparent $gray;
           border-radius: 0;
           border-style: solid;
           border-width: 23px 24px;
@@ -869,9 +877,6 @@ footer {
           z-index: 30;
         }
       }
-    }
-    #form-wrapper {
-      display: none;
     }
   }
 }
