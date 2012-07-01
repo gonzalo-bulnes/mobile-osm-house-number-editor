@@ -802,7 +802,79 @@ footer {
   }
 }
 
-@media (min-width: 480px) {}
+@media (min-width: 480px) {
+
+  /* Landscape spike */
+
+  #header-wrapper, #map-wrapper {
+    display: none;
+  }
+  #header-wrapper {
+    display: block;
+    position: absolute;
+    height: 48px;
+    margin-left: -24px; /* 48px / 2 */
+    margin-top: -24px; /* 48px / 2 */
+    top: 50%;
+    width: 50%;
+    z-index: 10;
+    #header-wrapper-inner, header {
+      height: 100%;
+      width: 100%;
+    }
+    header {
+      margin-left: 24px;
+      width: 48px;
+      h1 a {
+        display: none;
+      }
+    }
+  }
+  .js.cssgradients #header-wrapper {
+      /* Keep the gradient left top to minimize the form-#map::after transition. */
+      background:-webkit-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+      background:   -moz-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+      background:    -ms-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+      background:     -o-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+      background:        linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
+  }
+  .js.borderradius #header-wrapper {
+    border-radius: 0px 2px 2px 0px;
+  }
+  .js div#main {
+    min-height: 0;
+    height: 100%;
+    #map-wrapper {
+      display: block;
+      #map {
+        display: block;
+        height: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          border-color: transparent transparent transparent #111; /* see gradient, should it be $gray for consitency? */
+          border-radius: 0;
+          border-style: solid;
+          border-width: 23px 24px;
+          height: 0;
+          left: 50%;
+          margin-left: -24px;
+          margin-top: -23px;
+          top: 50%;
+          width: 48px;
+          z-index: 30;
+        }
+      }
+    }
+    #form-wrapper {
+      display: none;
+    }
+  }
+}
 
 @media (min-width: 720px) {}
 
