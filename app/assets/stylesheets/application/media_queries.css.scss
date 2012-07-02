@@ -802,35 +802,21 @@ footer {
   }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 480px) and (max-width: 959px) and (min-aspect-ratio: 1/1) {
 
   /* Extra lean landscape spike */
 
-  #header-wrapper, #map-wrapper {
-    display: none;
-  }
   #header-wrapper {
-    display: block;
+    left: 0;
     position: absolute;
-    height: 48px;
-    margin-left: -24px; /* 48px / 2 */
-    margin-top: -24px; /* 48px / 2 */
-    top: 50%;
-    width: 50%;
-    z-index: 10;
-    #header-wrapper-inner, header {
-      height: 100%;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    #header-wrapper-inner {
       width: 100%;
     }
-    header {
-      margin-left: 24px;
-      width: 48px;
-      h1 a {
-        display: none;
-      }
-    }
   }
-  .js.cssgradients #header-wrapper {
+  .js.cssgradients #form-wrapper {
       /* Keep the gradient left top to minimize the form-#map::after transition. */
       background:-webkit-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
       background:   -moz-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
@@ -838,7 +824,10 @@ footer {
       background:     -o-linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
       background:        linear-gradient(left top, #3c3c3c, #282828 40%, #111 80%, #080808);
   }
-  .js.borderradius #header-wrapper {
+  .js.cssgradients div#main #map-wrapper #map::before {
+    border-left-color: #111;
+  }
+  .js.borderradius #form-wrapper {
     border-radius: 0px 2px 2px 0px;
   }
   .js div#main {
@@ -856,14 +845,14 @@ footer {
           content: "";
           display: block;
           position: absolute;
-          border-color: transparent transparent transparent #111; /* see gradient, should it be $gray for consitency? */
+          border-color: transparent transparent transparent $gray;
           border-radius: 0;
           border-style: solid;
-          border-width: 23px 24px;
+          border-width: 31px 24px;
           height: 0;
           left: 50%;
           margin-left: -24px;
-          margin-top: -23px;
+          margin-top: -31px;
           top: 50%;
           width: 48px;
           z-index: 30;
@@ -871,31 +860,33 @@ footer {
       }
       #form-wrapper {
         font-size: .86em;
-        height: 48px;
-        left: 38px;
-        margin-top: -10px;
+        height: 64px;
+        left: 0;
+        margin-left: -24px;
+        margin-top: -32px;
         position: absolute;
         top: 50%;
-        width: 40%;
+        width: 50%;
         #form-wrapper-inner {
           background-color: transparent;
+          bottom: 0;
+          margin-left: 24px; /* compensate for #form-wrapper negative margin-left */
+          margin-top: 4px; /* arbitrary */
           form {
             background: transparent;
             #flash {
-              display: none; /* temporary */
+              margin-right: 18px; /* arbitrary */
             }
             #housenumber.field {
-              width: 61%;
-              label {
-                left: -9999px;
-                position: absolute;
-              }
+              width: 66%;
               input, div input {
                 width: 85%;
               }
             }
             #submit.field {
-              right: 12px;
+              margin-bottom: 9px; /* manual adjustment to align with #housenumber input */
+              right: 18px; /* arbitrary */
+              width: 24%;
             }
           }
         }
