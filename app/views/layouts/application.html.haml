@@ -3,7 +3,7 @@
 - html_tag :class => "no-js", :lang => "en" do
   = render "head"
 
-  %body{ :class => "#{ controller.controller_name } #{ "demo" unless Rails.env.production? }", :id => "#{ controller.action_name + '_page'}" }
+  %body{ :class => "#{ controller.controller_name } #{ "demo landscape" unless Rails.env.production? }", :id => "#{ controller.action_name + '_page'}" }
     #wrapper
       = render "chromeframe"
       #header-wrapper
