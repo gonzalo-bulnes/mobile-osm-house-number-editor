@@ -140,6 +140,7 @@ header {
       text-decoration: none;
       &:focus, &:hover {
         @include insensitive;
+        cursor: pointer;
       }
     }
   }
@@ -919,7 +920,8 @@ footer {
           margin-right: .5em;
           position: relative;
           text-decoration: none;
-          #help_page &#help_link {
+          .static_pages#help_page &#help_link,
+          .users#show_page &#user_link {
             &::after {
               @include index;
             }
@@ -950,14 +952,22 @@ footer {
         font-size: 1.143em; /* 16px / 14px */
         line-height: 1.714em;
       }
-      #help_page & {
-        height: 2px;
-        min-height: inherit;
+      .static_pages#help_page &,
+      .users#show_page & {
+        display: none;
       }
     }
     article {
       @include center;
       width: $width;
+    }
+    #content-wrapper {
+      .static_pages#help_page &,
+      .users#show_page & {
+        background-color: $almost-white;
+        padding-top: 1px; /* arbitrary, avoid margin issues due to h1 */
+        color: $almost-gray;
+      }
     }
     #content-wrapper,
     #map-wrapper {
