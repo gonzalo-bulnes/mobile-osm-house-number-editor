@@ -1,10 +1,11 @@
 class HouseNumbersController < ApplicationController
+  before_filter :authenticate_user!, only: [:create, :destroy, :index, :show]
 
   def index
   end
 
   def create
-    @housenumber = HouseNumber.new(params[:house_number])
+    @housenumber = current_user.house_numbers.build(params[:house_number])
     if @housenumber.save
       flash[:success] = "Success"
       redirect_to root_path
@@ -20,5 +21,8 @@ class HouseNumbersController < ApplicationController
 
   def show
     @housenumber = HouseNumber.find(params[:id])
+  end
+
+  def destroy
   end
 end

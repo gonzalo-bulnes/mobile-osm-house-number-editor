@@ -2,3 +2,9 @@
   %h1 Users#show
   %p Find me in app/views/users/show.html.haml
   %p= @user.email
+
+  - if @user.house_numbers.any?
+    %section
+      %h1.h2 Recenty submitted
+      %ol
+        = render @house_numbers

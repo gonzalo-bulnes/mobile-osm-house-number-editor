@@ -55,8 +55,6 @@ describe "Users" do
 
     before { visit new_user_session_path }
 
-    let(:sign_up) { "Sign in" }
-
     it "should have basic structure" do
       should have_selector('header')
       should have_selector('nav')
@@ -89,6 +87,9 @@ describe "Users" do
   describe "'show' page" do
 
     let(:user) { FactoryGirl.create(:user) }
+    let!(:house_number_1) { FactoryGirl.create(:house_number, user: user, changeset: 1234, latitude: -32.12345, longitude: -70.98765, value: "110") }
+    let!(:house_number_2) { FactoryGirl.create(:house_number, user: user, changeset: 1223, latitude: -33.23456, longitude: -70.99832, value: "202") }
+
     before { visit user_path(user) }
 
     it "should have basic structure" do
@@ -109,6 +110,18 @@ describe "Users" do
     it "should have copyright notice and sources link" do
       should have_selector('footer p.copyright', :text => 'Copyright')
       should have_selector('footer p a', :text => 'Github repository')
+    end
+
+    describe "house numbers" do
+      it { should have_content(house_number_1.value) }
+      it { should have_content(house_number_1.latitude) }
+      it { should have_content(house_number_1.longitude) }
+
+      it { should have_content(house_number_2.value) }
+      it { should have_content(house_number_2.latitude) }
+      it { should have_content(house_number_2.longitude) }
+
+      it { should have_content(user.house_numbers.count) }
     end
   end
 end

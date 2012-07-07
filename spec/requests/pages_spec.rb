@@ -79,5 +79,5 @@ describe "Pages" do
     it "should be apple-mobile-web-app-capable" do
       should have_selector('meta[name="apple-mobile-web-app-capable"][content="yes"]')
     end
-  end 
+  end
 end

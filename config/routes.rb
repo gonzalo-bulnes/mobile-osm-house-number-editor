@@ -11,6 +11,7 @@ Mobileosmhousenumbereditor::Application.routes.draw do
   match "/article" => "Pages#article"
 
   resources :house_numbers, :only => [:index, :show, :new, :create, :destroy]
+  #resources :house_numbers, :only => [:new, :create, :destroy]
   resources :users, :only => [:show]
   # The priority is based upon order of creation:
   # first created -> highest priority.

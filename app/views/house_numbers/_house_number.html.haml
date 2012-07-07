@@ -1,0 +1,5 @@
+%li
+  = house_number.value
+  = house_number.latitude
+  = house_number.longitude
+  %p Submitted #{ time_ago_in_words(house_number.created_at) } ago.
