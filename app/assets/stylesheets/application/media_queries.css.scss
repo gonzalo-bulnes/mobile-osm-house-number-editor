@@ -22,9 +22,11 @@ $gray: #333;
 $gray-complement: #f0f0f0;
 $gray-complement-darker: #eee;
 $lightgray: #aaa;
+$quitelightgray: #e8e8e8;
 $verylightgray: #eee;
 $mdn-yellow: #f8d575;
-$mdn-blue: #0cf;
+$mdn-blue: #0cf; /* to be used for text on $darkgray or $gray backgrounds */
+$mdn-blue-for-light-background: #0be; /* to be used for text on $almost-white backgrounds */
 $mdn-red: #f33;
 $mdn-green: #a7df38;
 // For reference only: $width is also set in media queries.
@@ -285,10 +287,9 @@ footer {
   body {
     background-color: $gray;
     color: $gray-complement;
-  }
-
-  body.demo {
-    background: $gray image_url('shared/qastaging-indexed.png') repeat left top;
+    &.demo {
+      background: $gray image_url('shared/qastaging-indexed.png') repeat left top;
+    }
   }
 
   #header-wrapper-inner,
@@ -957,19 +958,56 @@ footer {
         display: none;
       }
     }
-    article {
-      @include center;
-      width: $width;
-    }
     #content-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
       .static_pages#help_page &,
       .users#show_page & {
         background-color: $almost-white;
-        padding-top: 1px; /* arbitrary, avoid margin issues due to h1 */
         color: $almost-gray;
+        a {
+          color: $mdn-blue-for-light-background;
+        }
+      }
+      article {
+        width: 100%;
+        header, ol#faq li {
+          @include center;
+          width: $width;
+        }
+        header {
+          background: transparent;
+          float: none;
+          h1 {
+            font-size: 1.714em; /* 24px / 14px */
+            margin: 1em 1.042%; /* 10px / 960px (2 gutters) */
+            text-align: left;
+            width: 64.583%; /* 620px / 960px (8 columns) */
+          }
+        }
+        ol#faq {
+          background-color: $quitelightgray;
+          list-style: none;
+          margin: 0;
+          overflow: hidden;
+          padding: 1em 0 3em;
+          width: 100%;
+          li {
+            h2, p {
+              margin-left: 1.042%; /* 10px / 960px (gutter) */
+              margin-right: 1.042%; /* 10px / 960px (gutter) */
+              width: 64.583%; /* 620px / 960px (8 columns) */
+            }
+            p.scope {
+              color: $lightgray;
+              font-style: italic;
+              margin-top: -1em;
+            }
+          }
+        }
       }
     }
-    #content-wrapper,
     #map-wrapper {
       clear: both;
       display: block;
