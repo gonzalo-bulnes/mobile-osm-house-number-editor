@@ -7,6 +7,7 @@ Mobileosmhousenumbereditor::Application.routes.draw do
   root :to => "HouseNumbers#new"
   match "/about" => "StaticPages#about"
   match "/help" => "StaticPages#help"
+  match "/robots.txt" => "StaticPages#robots"
 
   match "/article" => "Pages#article"
 
