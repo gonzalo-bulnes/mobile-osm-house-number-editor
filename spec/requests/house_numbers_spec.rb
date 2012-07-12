@@ -11,7 +11,7 @@ describe "House Number pages" do
 
     describe "with invalid information" do
       it "should not create an house number" do
-        pending "This test should be preformed with a signed-in user"
+        pending "This test should be performed with a signed-in user"
         expect { click_button submit }.not_to change(HouseNumber, :count)
       end
     end
@@ -25,7 +25,7 @@ describe "House Number pages" do
       end
 
       it "should display an error message" do
-        pending "This test should be preformed with a signed-in user"
+        pending "This test should be performed with a signed-in user"
         should have_selector('label', text: "House number can't be blank!")
       end
     end
@@ -38,7 +38,7 @@ describe "House Number pages" do
       end
 
       it "should create an house number" do
-        pending "This test should be preformed with a signed-in user"
+        pending "This test should be performed with a signed-in user"
         expect { click_button submit }.to change(HouseNumber, :count).by(1)
       end
     end
@@ -52,8 +52,8 @@ describe "House Number pages" do
       end
 
       it "should flash sucess" do
-        pending "This test should be preformed with a signed-in user"
-        should have_selector('#flash .flash-success', text: "Success")
+        pending "This test should be performed with a signed-in user"
+        should have_selector('#flash .flash-success', text: "Success!")
       end
     end
   end

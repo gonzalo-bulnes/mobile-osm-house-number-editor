@@ -7,7 +7,7 @@ class HouseNumbersController < ApplicationController
   def create
     @housenumber = current_user.house_numbers.build(params[:house_number])
     if @housenumber.save
-      flash[:success] = "Success"
+      flash[:success] = "Success!"
       redirect_to root_path
     else
       render 'pages/home'
