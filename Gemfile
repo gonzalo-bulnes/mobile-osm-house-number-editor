@@ -4,11 +4,14 @@ gem 'rails', '>= 3.2.3'
 gem 'pg', '0.12.2'
 gem 'haml'
 gem 'devise', '>= 2.1.0'
+gem 'omniauth-osm'
 
 group :development do
   gem 'capistrano'
   gem 'rvm-capistrano', '>= 1.1.0'
   gem 'capistrano-ext'
+  # see http://railscasts.com/episodes/235-omniauth-part-1
+  gem "nifty-generators"
 end
 
 group :development, :test do
@@ -46,5 +49,7 @@ group :test do
   gem 'cucumber-rails', '>= 1.3.0', :require => false
   gem 'database_cleaner', '>= 0.7.2'
   gem 'launchy', '>= 2.1.0'
+  # Added by nifty-generators
+  gem 'mocha'
 end
 

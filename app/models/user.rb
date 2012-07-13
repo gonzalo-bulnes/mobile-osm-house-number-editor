@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :authentications
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -28,5 +29,7 @@ end
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime        not null
 #  updated_at             :datetime        not null
+#  provider               :string(255)
+#  uid                    :string(255)
 #
 
