@@ -11,6 +11,7 @@ Mobileosmhousenumbereditor::Application.routes.draw do
 
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
+  match "/signin" => "static_pages#signin", :as => :signin
 
   resources :house_numbers, :only => [:index, :show, :new, :create, :destroy]
   #resources :house_numbers, :only => [:new, :create, :destroy]

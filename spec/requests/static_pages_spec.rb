@@ -13,7 +13,7 @@ describe "Static pages" do
   describe "Help page" do
     before { visit help_path }
 
-    it { should have_selector('body#help_page') }
+    it { should have_selector('body.static_pages#help_page') }
   end
 
   describe "Home page" do
@@ -21,6 +21,16 @@ describe "Static pages" do
     it "should be a page which exists" do
       get "/"
       response.code.should eq("200")
+    end
+  end
+
+  describe "Sign-in page" do
+    before { visit signin_path }
+
+    it { should have_selector('body.static_pages#signin_page') }
+
+    it "should have a 'Sign in with OSM' link" do
+      should have_selector('#content-wrapper a[href="/auth/osm"]')
     end
   end
 end
