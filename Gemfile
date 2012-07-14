@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '>= 3.2.3'
 gem 'pg', '0.12.2'
 gem 'haml'
-gem 'devise', '>= 2.1.0'
 
 group :development do
   gem 'capistrano'

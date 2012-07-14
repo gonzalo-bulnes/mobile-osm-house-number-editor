@@ -4,7 +4,9 @@ describe "Users" do
 
   subject { page }
 
-  describe "sign up page" do
+  pending "sign up page" do
+    # reason: user registration has not been implemented yet
+    # comment: there will be no sign-up page anymore
 
     before { visit new_user_registration_path }
 
@@ -51,7 +53,9 @@ describe "Users" do
     end
   end
 
-  describe "sign in page" do
+  pending "sign in page" do
+    # reason: user registration has not been implemented yet
+    # comment: there will be no sign-up page anymore
 
     before { visit new_user_session_path }
 

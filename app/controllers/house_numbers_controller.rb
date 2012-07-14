@@ -1,11 +1,13 @@
 class HouseNumbersController < ApplicationController
-  before_filter :authenticate_user!, only: [:create, :destroy, :index, :show]
+  # Not implemented since Devise was removed
+  #before_filter :authenticate_user!, only: [:create, :destroy, :index, :show]
 
   def index
   end
 
   def create
-    @housenumber = current_user.house_numbers.build(params[:house_number])
+    # Not implemented since Devise was removed
+    #@housenumber = current_user.house_numbers.build(params[:house_number])
     if @housenumber.save
       flash[:success] = "Success!"
       redirect_to root_path

@@ -4,7 +4,8 @@ describe "House Number pages" do
 
   subject { page }
 
-  describe "new" do
+  pending "new" do
+    # reason: user registration has not been implemented yet
     before { visit new_house_number_path }
 
     let(:submit) { "Submit!" }

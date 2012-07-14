@@ -1,7 +1,5 @@
 Mobileosmhousenumbereditor::Application.routes.draw do
 
-  devise_for :users
-
   get "pages/article"
 
   root :to => "HouseNumbers#new"
@@ -13,7 +11,7 @@ Mobileosmhousenumbereditor::Application.routes.draw do
 
   resources :house_numbers, :only => [:index, :show, :new, :create, :destroy]
   #resources :house_numbers, :only => [:new, :create, :destroy]
-  resources :users, :only => [:show]
+  resources :users, :only => [:index, :show, :new, :create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

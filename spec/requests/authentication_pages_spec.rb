@@ -7,12 +7,14 @@ describe "Authentication" do
 
       describe "in the house numbers controller" do
 
-        describe "submitting to the create action" do
+        pending "submitting to the create action" do
+          # reason: "User registration has not been set up."
           before { post house_numbers_path }
           specify { response.should redirect_to(new_user_session_path) }
         end
 
-        describe "submitting to the destroy action" do
+        pending "submitting to the destroy action" do
+          # reason: "User registration has not been set up."
           before { delete house_number_path(FactoryGirl.create(:house_number)) }
           specify { response.should redirect_to(new_user_session_path) }
         end
