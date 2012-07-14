@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '>= 3.2.3'
 gem 'pg', '0.12.2'
 gem 'haml'
+gem 'omniauth'
+gem 'omniauth-osm'
 
 group :development do
   gem 'capistrano'

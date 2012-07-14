@@ -9,6 +9,9 @@ Mobileosmhousenumbereditor::Application.routes.draw do
 
   match "/article" => "Pages#article"
 
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/signout" => "sessions#destroy", :as => :signout
+
   resources :house_numbers, :only => [:index, :show, :new, :create, :destroy]
   #resources :house_numbers, :only => [:new, :create, :destroy]
   resources :users, :only => [:index, :show, :new, :create, :destroy]

@@ -3,9 +3,12 @@
     %li
       = link_to 'Help', help_path, id: "help_link"
 
-    %li
-      %a{ href: "#"}
-        Sign in
+    - if current_user
+      %li= link_to current_user.name, current_user, id: "user_link"
+      %li= link_to 'Sign out', signout_path
+    - else
+      %li
+        %a{ href: "/auth/osm"}
+          Sign in with <abbr title="OpenStreetMap">OSM</abbr>
 
-    %li
-      = link_to 'Settings', '#', id: "settings_link"
+    %li= link_to 'Settings', '#', id: "settings_link"
