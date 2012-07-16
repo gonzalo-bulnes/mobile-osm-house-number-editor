@@ -242,6 +242,11 @@ div#main {
   }
 }
 
+#signin-wrapper {
+  margin-left: 3.125%; /* 10px / 320px */
+  margin-right: 3.215%; /* 10px / 320px */
+  text-align: center;
+}
 aside {
   margin-top: 0;
   margin-bottom: 0;
@@ -519,6 +524,21 @@ footer {
         background:     -ms-linear-gradient(top, #3c3c3c, #282828 20%, #111 80%, #080808);
         background:      -o-linear-gradient(top, #3c3c3c, #282828 20%, #111 80%, #080808);
         background:         linear-gradient(top, #3c3c3c, #282828 20%, #111 80%, #080808);
+      }
+    }
+  }
+
+  .static_pages#signin_page div#main #content-wrapper {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    #signin-wrapper {
+      background-color: rgba(27, 27, 27, .8);
+      border-radius: 20px;
+      margin-top: 2em;
+      overflow: hidden;
+      p {
+        margin: 20px;
       }
     }
   }
@@ -961,11 +981,11 @@ footer {
     #content-wrapper {
       overflow: hidden;
       position: relative;
-      width: 100%;
       .static_pages#help_page &,
       .users#show_page & {
         background-color: $almost-white;
         color: $almost-gray;
+        width: 100%;
         a {
           color: $mdn-blue-for-light-background;
         }
