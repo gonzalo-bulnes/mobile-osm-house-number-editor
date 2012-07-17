@@ -17,6 +17,11 @@ group :development, :test do
   gem 'rspec-rails', '>= 2.10.1'
   gem 'annotate', '~> 2.4.1.beta'
   gem 'factory_girl_rails', '>= 3.3.0'
+  gem 'jasminerice'
+  # Guard 1.1.1 is required by guard-jasmine
+  # see https://github.com/guard/guard/issues/283#issuecomment-6078721
+  gem 'guard', '>= 1.1.1'
+  gem 'guard-jasmine'
 end
 
 # Gems used only for assets and not required

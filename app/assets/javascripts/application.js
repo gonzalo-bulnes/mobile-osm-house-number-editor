@@ -11,8 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
+//= //require jquery_ujs
 //= require h5bp
 //= require leaflet/leaflet
+//= require location_helper
 //= require map
-
