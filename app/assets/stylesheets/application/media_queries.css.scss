@@ -445,6 +445,15 @@ footer {
                   margin-right: 3.125%; /* 10px / 320px */
                   width: 93.5%;
                 }
+                a {
+                  border-bottom: 1px solid $mdn-blue;
+                  color: $mdn-blue;
+                  text-decoration: none;
+                  &:focus, &:hover {
+                    border-color: $mdn-yellow;
+                    color: $mdn-yellow;
+                  }
+                }
               }
               &#preview, &#submit {
                 margin-bottom: .5em;
@@ -468,6 +477,9 @@ footer {
                 margin-left: 3.125%; /* 10px / 320px */
                 margin-right: 1.067%; /* 5px / 320px */
                 width: 30%;
+                &.disabled {
+                  display: none; /* Javascript: location_helper */
+                }
                 button {
                   font-size: auto;
                   margin-bottom: 5px;

@@ -15,4 +15,3 @@
 //= require h5bp
 //= require leaflet/leaflet
 //= require location_helper
-//= require map

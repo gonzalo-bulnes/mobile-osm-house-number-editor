@@ -19,7 +19,10 @@
       = f.text_field :value, placeholder: "e.g. 5435bis",  value: params[:house_number][:value]
 
   .field.hint
-    %label Fill the location in or slip the map
+    %label
+      Fill the form  in, slip the map or
+      = link_to "guess location", "#locate", id: "locate"
+      !
 
   .field#lat
     = f.label :latitude
@@ -39,5 +42,6 @@
   .field#submit
     = f.submit "Submit!"
 
-  .field#preview
+  -# Javascript: location_helper
+  .field.disabled#preview
     %button Preview
