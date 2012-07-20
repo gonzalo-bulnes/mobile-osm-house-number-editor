@@ -974,7 +974,7 @@ footer {
     margin-bottom: 6em; /* footer approximative height */
     width: 100%;
     #banner {
-      border-bottom: 1px solid $verylightgray;
+      border-bottom: 1px solid #ddd;
       @include center;
       background-color: $almost-white;
       color: $almost-gray;
@@ -1169,6 +1169,7 @@ footer {
               }
               &#preview button {
                 background-color: inherit;
+                background-image: none;
                 border-width: 0;
                 color: inherit;
                 cursor: pointer;
