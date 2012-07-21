@@ -45,7 +45,18 @@ Spork.prefork do
     # See https://github.com/plataformatec/devise/wiki/How-To:-Controllers-and-Views-tests-with-Rails-3-%28and-rspec%29
     #config.include Devise::TestHelpers, :type => :controller
     #config.extend ControllerMacros, :type => :controller
+
+    # OmniAuth
+    # See http://stackoverflow.com/questions/11388100/create-users-in-factory-girl-with-omniauth
+    # and https://github.com/intridea/omniauth/wiki/Integration-Testing
+    #OmniAuth.config.test_mode = true
+    #OmniAuth.config.add_mock(:osm, {:uid => '12345'})
+
+    # OmniAuth (again!) there is a line outside of the RSpec.config block
+    # See https://gist.github.com/1338738
+    config.include(OmniauthMacros)
   end
+  OmniAuth.config.test_mode = true
 end
 
 Spork.each_run do

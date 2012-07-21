@@ -1,6 +1,19 @@
 require 'spec_helper'
 
 describe User do
+
+  describe "factory" do
+
+    #let(:user) { FactoryGirl.create(:signed_in_user) }
+
+    it "should not rely on a workaround for OnmiAuth testing" do
+      pending "Don't know how to test user.name not to be equal to 'Workaround Name' (see details in test comments)."
+      # User is created by with the User.create_with_omniauth method
+      # yet FactoryGirl only uses User.create as FactoryGirl.create(:user).
+      #user.name.should be_equal("Workaround Name")
+    end
+  end
+
   before { @user = User.new }
 
   subject { @user }
