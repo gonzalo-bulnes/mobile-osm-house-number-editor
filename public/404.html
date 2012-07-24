@@ -11,18 +11,15 @@
         position: relative;
       }
       body {
-        background-color: #333;
-        color: #f0f0f0;
-        text-align: center;
         font-family: 'Ubuntu', sans-serif;
         font-size: 14px;
         margin: 10% auto;
-        width: 320px;
+        text-align: center;
       }
       h1 {
-        font-size: 3.428em; /* 48px / 14px */
+        font-size: 1.714em; /* 24px / 14px */
         margin-bottom: 0;
-        margin-top: 1em;
+        margin-top: 2em;
       }
       p {
         margin-top: .5em;
@@ -39,12 +36,27 @@
         text-align: center;
       }
       a, a:focus, a:hover, a:visited, a:link {
-        border-bottom: 1px solid #0cf;
-        color: #0cf;
+        border-bottom: 1px solid #0be;
+        color: #0be;
         text-decoration: none;
       }
       a.go::after {
         content: " →";
+      }
+      @media (min-width: 320px) {
+        body {
+          background-color: #333;
+          color: #f0f0f0;
+          width: 320px;
+        }
+        h1 {
+          font-size: 3.428em; /* 48px / 14px */
+          margin-top: 1em;
+        }
+        a, a:focus, a:hover, a:visited, a:link {
+          border-bottom: 1px solid #0cf;
+          color: #0cf;
+        }
       }
     </style>
   </head>

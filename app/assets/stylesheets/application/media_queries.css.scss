@@ -86,6 +86,7 @@ body {
 /* Basic Colors and Behavior */
 
 a {
+  color: $mdn-blue;
   &:hover, &:focus {
     color: $mdn-blue;
     text-decoration: underline;
@@ -591,9 +592,6 @@ footer {
 
   aside {
     display: none;
-    a {
-      color: $mdn-blue;
-    }
     section {
       h1, h2 {
         border-bottom-width: 0;
