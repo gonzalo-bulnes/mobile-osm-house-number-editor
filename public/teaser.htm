@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Coming soon...</title>
+    <meta content='width=device-width, target-densitydpi=device-dpi' name='viewport'>
+    <link href='/assets/shared/favicon.png' rel='shortcut icon' type='image/png'>
+    <style type="text/css">
+      html {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      body {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 14px;
+        margin: 5em auto;
+        text-align: center;
+      }
+      p {
+        margin-top: .5em;
+      }
+      #nav {
+        margin: 0em auto;
+      }
+      #nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      #nav ul li {
+        text-align: center;
+      }
+      a, a:focus, a:hover, a:visited, a:link {
+        border-bottom: 1px solid #0be;
+        color: #0be;
+        text-decoration: none;
+      }
+      header h1 a:link,
+      header h1 a:focus,
+      header h1 a:hover,
+      header h1 a:visited {
+        border-bottom-width: 0;
+        color: inherit;
+        cursor: default;
+      }
+      @media (min-width: 320px) {
+        body {
+          background-color: #333;
+          color: #f0f0f0;
+          width: 320px;
+        }
+        a, a:focus, a:hover, a:visited, a:link {
+          border-bottom: 1px solid #0cf;
+          color: #0cf;
+        }
+        header {
+          background: #333 url('http://qastaging.housenumbereditor.com/assets/shared/apple-touch-icon-144x144.png') no-repeat center top;
+          overflow: hidden;
+        }
+        header h1 {
+          float: left;
+          font-size: 1.714em;
+          text-align: auto;
+        }
+        header h1 a:link,
+        header h1 a:focus,
+        header h1 a:hover,
+        header h1 a:visited {
+          background-color: #333;
+          color: #f0f0f0;
+          font-size: 1em;
+          line-height: 1.3em;
+          padding-bottom: 0;  
+          display: block;
+          margin-bottom: 10px; /* arbitrary */
+          margin-left: 0;
+          margin-right: 0;
+          margin-top: 154px; /* (image) 144px + 10px */
+        }
+        header h1 a:before {
+          color: #F8D575;
+          content: "Mobile! ";
+        }
+        #main p {
+          font-size: 1.142em;
+        }
+        footer {
+          position: absolute;
+          bottom: 0;
+          font-size: .86em;
+          color: #aaa;
+          width: 320px;
+        }
+        footer div {
+          border-top: 1px solid #383838;
+        }
+      }
+      @media (min-width: 320px) and () {
+        header {
+          background: #333 url('http://qastaging.housenumbereditor.com/assets/shared/apple-touch-icon-144x144@2x.png') no-repeat center top;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header id='header'>
+      <h1><a href='http://housenumbereditor.com/'>O<span class="long">pen</span>S<span class="long">treet</span>M<span class="long">ap</span> House&nbsp;Number Editor</a>
+    </h1>
+    </header>
+
+    <div id="main">
+      <p>Walk, take a breath, contribute to <abbr title="OpenStreetMap">OSM</abbr>.</p>
+    </div>
+
+    <footer id="footer">
+      <div>
+        <p>This project is free and open-source, see its <a href="https://github.com/gonzalo-bulnes/mobile-osm-house-number-editor">Github repository</a> for sources and licensing information.</p>
+      <p class="copyright">Copyright © 2012 Gonzalo Bulnes Guilpain</p>
+      </div>
+    </footer>
+  </body>
+</html>
