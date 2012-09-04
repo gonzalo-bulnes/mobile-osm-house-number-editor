@@ -18,7 +18,7 @@ The application lives at [housenumbereditor.com] [app].
 If you are interested in agile project management, you can [browse the project stories] [3], they are public and hosted on Pivotal Tracker. The first stories define the [aims] [aims], [targets] [targets] and [context] [state of the art] of the project.
 
   [app]: http://housenumbereditor.com
-  [3]: https://www.pivotaltracker.com/projects/344377 "Mobile OSM House Number Editor is agile!"
+  [3]: https://www.pivotaltracker.com/projects/344383 "Mobile OSM House Number Editor is agile!"
   [aims]: https://www.pivotaltracker.com/story/show/16704761
   [targets]: https://www.pivotaltracker.com/story/show/16715837
   [state of the art]: https://www.pivotaltracker.com/story/show/16714677
