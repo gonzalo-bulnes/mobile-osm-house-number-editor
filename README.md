@@ -13,7 +13,7 @@ The [addr:housenumber tag] [2] is part of the standard OSM features.
 
 ## More Information
 
-The application lives at [housenumbereditor.com] [app].
+The application ~~lives at [housenumbereditor.com] [app]~~ does not currenty live at its habitual address, if you have trouble running it locally get in touch with me opening an issue here.
 
 If you are interested in agile project management, you can [browse the project stories] [3], they are public and hosted on Pivotal Tracker. The first stories define the [aims] [aims], [targets] [targets] and [context] [state of the art] of the project.
 
